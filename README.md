@@ -12,6 +12,7 @@ El archivo grub.cfg lleva la configuración para arrancar minino que se encuentr
 
 Descargamos este repositorio. 
 
+
     sudo apt-get update -y
     
     sudo apt-get install git -y
@@ -24,6 +25,7 @@ Descargamos este repositorio.
 
 3. Como ya conocemos si el usb es "sdb", sdc", etc...; vamos a una terminal y lo montamos en una carpeta del sistema para poder copiar los archivos de este repositorio en esa partición.
 
+    ```bash
     mkdir efiusb 
   
     sudo mount /dev/sdX1 efiusb
@@ -37,6 +39,7 @@ Descargamos este repositorio.
     sudo umount /dev/sdX1
     
     sudo rm -r efiusb 
+    
     
 4. Apagamos el sistema y cargamos una versión de minino en modo live desde otro usb.  Cuando arranque, conectamos el usb previamente usado en los anteriores puntos y en utilidades minino, buscamos la aplicación "traspasa minino" e instalamos el sistema en la segunda partición que creamos anteriormente con gparted. Tenemos que descubrir con gparted o el comando "df", cuales son las particiones de este usb y no lo hagamos en el disco duro o el usb live de minino usado para cargar el sistema.
 
