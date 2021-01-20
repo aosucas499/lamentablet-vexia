@@ -27,7 +27,7 @@ Descargamos este repositorio.
     ```bash
     mkdir efiusb 
   
-  # X= b, c, d. Dependiendo de cómo se montó el usb. Usar df o gparted para saberlo.
+  (X= b, c, d. Dependiendo de cómo se montó el usb. Usar df o gparted para saberlo)
     sudo mount /dev/sdX1 efiusb 
     
     cd lamentablet-vexia
@@ -36,7 +36,7 @@ Descargamos este repositorio.
     
     sudo cp -r * /home/$USER/efiusb
     
-   # X= b, c, d. Dependiendo de cómo se montó el usb. Usar df o gparted para saberlo.
+   (X= b, c, d. Dependiendo de cómo se montó el usb. Usar df o gparted para saberlo)
     sudo umount /dev/sdX1
     
     sudo rm -r efiusb 
