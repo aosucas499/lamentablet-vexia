@@ -37,7 +37,11 @@ Descargamos este repositorio.
     
     sudo umount /dev/sdX1 (X= b, c, d. Dependiendo de cómo se montó el usb. Usar df o gparted para saberlo)
     
+    cd /home/$USER
+    
     sudo rm -r efiusb 
+    
+    sudo rm -r lamentablet-vexia
     
     
 4. Instalamos una versión Live de linux, en este caso se ha probado ["minino-tde"](https://github.com/aosucas499/minino-TDE), en la segunda partición, la formateada en "ext4" (sdX2). Tenemos que utilizar unetbootin, ya que deja seleccionar en qué partición se instala y no borraríamos la primera partición de arranque UEFI. No funciona si grabas la ISO con rufus, etcher o cualquier otro. También hay que decir que la primera partición está configurada con un grub que solo funcionaría de esta manera.
