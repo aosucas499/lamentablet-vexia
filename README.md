@@ -12,18 +12,17 @@ El archivo grub.cfg lleva la configuración para arrancar minino que se encuentr
 
 Descargamos este repositorio. 
 
-
     sudo apt-get update -y
     
     sudo apt-get install git -y
 
     git clone https://github.com/aosucas499/lamentablet-vexia
 
- 1. Con gparted se debe de crear una partición de 512mb, formateada en fat32 y con las banderas "boot" y "esp"en el usb.
+ 1. Con gparted se debe de crear una partición de 512mb, formateada en fat32 y con las banderas "boot" y "esp"en el usb. (sdX1, siendo la x=b, c, d...)
 
-2. Crear una segunda partición cubriendo el total que quede del usb. Formateada en "ext4"
+2. Crear una segunda partición cubriendo el total que quede del usb. Formateada en "ext4" (sdX2, siendo la x= la misma que en paso anterior)
 
-3. Como ya conocemos si el usb es "sdb", sdc", etc...; vamos a una terminal y lo montamos en una carpeta del sistema para poder copiar los archivos de este repositorio en esa partición.
+3. Como ya conocemos si el usb es "sdb", sdc", etc...; vamos a una terminal y montamos la primera partición "sdX1" en una carpeta del sistema para poder copiar los archivos de este repositorio en esa partición.
 
     ```bash
     mkdir efiusb 
@@ -41,7 +40,21 @@ Descargamos este repositorio.
     sudo rm -r efiusb 
     
     
-4. Apagamos el sistema y cargamos una versión de minino en modo live desde otro usb.  Cuando arranque, conectamos el usb previamente usado en los anteriores puntos y en utilidades minino, buscamos la aplicación "traspasa minino" e instalamos el sistema en la segunda partición que creamos anteriormente con gparted. Tenemos que descubrir con gparted o el comando "df", cuales son las particiones de este usb y no lo hagamos en el disco duro o el usb live de minino usado para cargar el sistema.
+4. Instalamos una versión Live de linux, en este caso se ha probado ["minino-tde"](https://github.com/aosucas499/minino-TDE), en la segunda partición, la formateada en "ext4" (sdX2). Tenemos que utilizar unetbootin, ya que deja seleccionar en qué partición se instala y no borraríamos la primera partición de arranque UEFI. No funciona si grabas la ISO con rufus, etcher o cualquier otro.
+
+    ```bash
+    cd /home/$USER
+    
+    wget https://github.com/unetbootin/unetbootin/releases/download/700/unetbootin-linux64-700.bin
+    
+    chmod +x unetbootin-linux64-700.bin
+    
+    sudo ./https://github.com/unetbootin/unetbootin/releases/download/700/unetbootin-linux64-700.bin
+    
+  Al abrirse el programa unetbootin, seleccionamos la distribución live, seleccionando en "disco imagen" y en los tres puntitos ... para seleccionar la .ISO.
+  
+  En el apartado "unidad", seleccionamos la segunda partición, formateada en "ext4" y que anteriormente sería "sdX2". Para terminar pulsamos en "instalar".
+    
 
 5. Queda pendiente buscar drivers para el táctil, wifi, batería y sonido, así como el instalador en el disco duro de la tablet, seguramente haya que generar una imagen minino de 64 bits, aunque la versión de guadalinex de esta tablet es de 32 bits y arranca para instalarlo con una versión live de clonezilla. El arranque uefi una vez instalado lo hace con "REFIND".
     
