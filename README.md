@@ -49,7 +49,7 @@ Descargamos este repositorio.
     
     chmod +x unetbootin-linux64-700.bin
     
-    sudo ./https://github.com/unetbootin/unetbootin/releases/download/700/unetbootin-linux64-700.bin
+    sudo ./unetbootin-linux64-700.bin
     
   Al abrirse el programa unetbootin, seleccionamos la distribución live, seleccionando en "disco imagen" y en los tres puntitos ... para seleccionar la .ISO.
   
