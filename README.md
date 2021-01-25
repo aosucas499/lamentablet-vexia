@@ -8,7 +8,7 @@ Al arrancar en modo uefi, usando el archivo "bootia32.efi" en las tablet de 9v y
 
 El archivo grub.cfg lleva la configuración para arrancar minino que se encuentra alojado en la segunda partición.
 
-## Instrucciones: 
+## Instrucciones creación USB live: 
 
 Descargamos este repositorio. 
 
@@ -44,7 +44,7 @@ Descargamos este repositorio.
     sudo rm -r lamentablet-vexia
     
     
-4. Instalamos una versión Live de linux, en este caso se ha probado ["minino-tde"](https://github.com/aosucas499/minino-TDE), en la segunda partición, la formateada en "ext4" (sdX2). Tenemos que utilizar unetbootin, ya que deja seleccionar en qué partición se instala y no borraríamos la primera partición de arranque UEFI. No funciona si grabas la ISO con rufus, etcher o cualquier otro. También hay que decir que la primera partición está configurada con un grub que solo funcionaría de esta manera.
+4. Instalamos una versión Live de linux en el usb, en este caso se ha probado ["minino-tde"](https://github.com/aosucas499/minino-TDE), en la segunda partición, la formateada en "ext4" (sdX2). Tenemos que utilizar unetbootin, ya que deja seleccionar en qué partición se instala y no borraríamos la primera partición de arranque UEFI. No funciona si grabas la ISO con rufus, etcher o cualquier otro. También hay que decir que la primera partición está configurada con un grub que solo funcionaría de esta manera.
 
     ```bash
     cd /home/$USER
@@ -58,9 +58,12 @@ Descargamos este repositorio.
   Al abrirse el programa unetbootin, seleccionamos la distribución live, seleccionando en "disco imagen" y en los tres puntitos ... para seleccionar la .ISO.
   
   En el apartado "unidad", seleccionamos la segunda partición, formateada en "ext4" y que anteriormente sería "sdX2". Para terminar pulsamos en "instalar".
-    
+ 
+ # Instrucciones de instalación en disco
+ 
+ In process...
 
-5. Queda pendiente buscar drivers para el táctil, wifi, batería y sonido, así como el instalador en el disco duro de la tablet, seguramente haya que generar una imagen minino de 64 bits, aunque la versión de guadalinex de esta tablet es de 32 bits y arranca para instalarlo con una versión live de clonezilla. El arranque uefi una vez instalado lo hace con "REFIND".
+Queda pendiente buscar drivers para el táctil, wifi, batería y sonido, así como el instalador en el disco duro de la tablet, seguramente haya que generar una imagen minino de 64 bits, aunque la versión de guadalinex de esta tablet es de 32 bits y arranca para instalarlo con una versión live de clonezilla. El arranque uefi una vez instalado lo hace con "REFIND".
     
     
     
