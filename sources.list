@@ -1,0 +1,27 @@
+# Debian oficial LTS
+#deb http://deb.debian.org/debian/ jessie main contrib non-free
+# deb-src http://deb.debian.org/debian/ jessie main contrib non-free
+
+# Debian oficial - security
+#deb http://security.debian.org/ jessie/updates main contrib non-free
+# deb-src http://security.debian.org/ jessie/updates main contrib non-free
+
+# Debian oficial - jessie-updates LTS
+#deb http://deb.debian.org/debian/ jessie-updates main contrib non-free
+# deb-src http://deb.debian.org/debian/ jessie-updates main contrib non-free
+
+# Debian oficial - backports (deprecated in LTS?)
+#deb http://httpredir.debian.org/debian/ jessie-backports main contrib non-free
+#deb http://httpredir.debian.org/debian/ jessie-backports-sloppy main contrib non-free
+
+#guadalinex
+deb http://centros.edu.guadalinex.org/Edu/precisedda precise main
+deb http://centros.edu.guadalinex.org/Edu/catcornerdda guadalinexedu main
+
+
+
+
+
+
+
+
