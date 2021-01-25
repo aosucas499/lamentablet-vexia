@@ -34,8 +34,11 @@ wget http://centros.edu.guadalinex.org/Edu/precisedda/pool/main/l/linux/linux-im
 sudo mkdir -p /mnt/efi
 sudo cp fstab /etc/fstab 
 sudo mount -av
+sudo apt-get install -f -y
 sudo dpkg -i linux-firmware_1.79.1_all.deb
+sudo apt-get install -f -y
 sudo dpkg -i linux-image-3.4.43-generic-pae_3.4.43-00.01dda5_i386.deb
+sudo apt-get install -f -y
 sudo mv /mnt/efi/linuxramdisk.img /boot/initrd.img-3.4.43-generic-pae
 sudo mv /mnt/efi/linux.efi /boot/vmlinuz-3.4.43-generic-pae
 sudo update-grub
