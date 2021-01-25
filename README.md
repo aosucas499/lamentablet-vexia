@@ -63,7 +63,7 @@ Descargamos este repositorio.
  
  In process...
 
-Queda pendiente buscar drivers para el táctil, wifi, batería y sonido, así como el instalador en el disco duro de la tablet, seguramente haya que generar una imagen minino de 64 bits, aunque la versión de guadalinex de esta tablet es de 32 bits y arranca para instalarlo con una versión live de clonezilla. El arranque uefi una vez instalado lo hace con "REFIND".
+
     
     
     
