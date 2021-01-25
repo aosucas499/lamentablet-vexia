@@ -3,7 +3,7 @@
 
 
 # Remover paquetes de firmware incompatibles con la instalación del firmare de la tablet o kernel
-cd /home/$USER
+#cd /home/$USER
 sudo apt-get purge --remove atmel-firmware -y
 sudo apt-get purge --remove firmware-libertas -y
 sudo apt-get purge --remove firmware-misc-nonfree -y
