@@ -43,6 +43,11 @@ sudo mv /mnt/efi/linuxramdisk.img /boot/initrd.img-3.4.43-generic-pae
 sudo mv /mnt/efi/linux.efi /boot/vmlinuz-3.4.43-generic-pae
 sudo update-grub
 sudo update-grub2
+sudo rm /mnt/efi/*
+sudo mount -t vfat /dev/mmcblk0p1 /mnt/efi
+sudo cp -r /boot/* /mnt/efi
+ls /mnt/efi
+sudo umount /dev/mmcblk0p1
 
 #Instalamos kernel 5v
 #dpkg -i linux-image-3.10.20-generic-pae_3.10.20-00.01dda4_i386.deb
