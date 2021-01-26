@@ -108,7 +108,10 @@ Descargamos este repositorio en un sistema linux.
      
      rmdir mmcblk0p1
      
-Pulsamos la tecla "Y" y la tecla intro y se habŕa quedado instalado en la partición de arranque para arrancar minino.
+Pulsamos la tecla "Y" y la tecla intro y se habŕa quedado instalado en la partición de arranque para arrancar minino. Reinciamos el equipo y entramos en la bios.
+
+Arrancamos la tablet pulsando la teca "ESC" hasta que accede a la Bios. Buscamos la pestaña "Boot option priorities" y ponemos como primera opción "UEFI OS"
+
      
      
      
