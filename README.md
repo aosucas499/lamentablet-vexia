@@ -10,7 +10,7 @@ El archivo grub.cfg lleva la configuración para arrancar minino que se encuentr
 
 ## Instrucciones creación USB live: 
 
-Descargamos este repositorio. 
+Descargamos este repositorio en un sistema linux.
 
     sudo apt-get update -y
     
@@ -64,7 +64,7 @@ Descargamos este repositorio.
  1. Arrancamos la tablet pulsando la teca "ESC" hasta que accede a la Bios. Buscamos la pestaña BOOT y buscamos el arranque "UEFI USB"
     Sino aparece, pulsamos en UEFI: Built-in EFI shell y seguimos las siguiente indicaciones.
     
-    a) Esperamos que terminen los 5 segundo y en la línea de comandos introducimos fs1: y pulsamos Enter. Para introducir los dos puntos tenemos que usar la tecla Mayúscula Derecha y la tecla ñ, ya que aparece como si fuese un teclado inglés.
+    a) Esperamos que terminen los 5 segundos y en la línea de comandos introducimos fs1: y pulsamos Enter. Para introducir los dos puntos tenemos que usar la tecla Mayúscula Derecha y la tecla ñ, ya que aparece como si fuese un teclado inglés.
     
     b) Introducimos en la terminal: cd EFI y pulsamos la tecla ENTER.
     
@@ -73,7 +73,32 @@ Descargamos este repositorio.
     d)Introducimos en la terminal: bootia32.efi y pulsamos la tecla ENTER.
     
     e) Pulsamos en la opción "minino live" y arrancará el sistema live.
+    
+2. Minino traspasa: a explicar
 
+3. Instalamos el cargador de arranque UEFI REfind que nos facilitará la vida. Si podemos tener internet con un cable usb y el teléfono móvil creando un punto de acceso ejecutaremos la primera línea, en caso contrario tendremos que descargarlo del repositorio en un pendrive y posteriormente agregarlo a la tablet por usb en la carpeta usuario.
+    
+     ```bash
+     
+     cd ~
+     
+     git clone https://github.com/aosucas499/lamentablet-vexia
+     
+     cd lamentablet-vexia
+     
+     unzip refin*.zip
+     
+     rm *.zip
+     
+     cd refin*
+     
+     sudo ./refind-install --usedefault /dev/mmcblk0p1 --alldrivers
+     
+Pulsamos la tecla "Y" y la tecla intro y se habŕa quedado instalado en la partición de arranque para arrancar minino.
+     
+     
+     
+     
 
     
     
