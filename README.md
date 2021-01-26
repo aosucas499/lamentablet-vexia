@@ -4,7 +4,7 @@ Primeras investigaciones.
 
 La tablet Vexia solo permite arrancar en modo UEFI, nada de modo Legacy. Para rizar más el rizo, la BIOS es UEFI 32 bits. Necesita archivos especiales para arranque. Se encuentran en la carpeta usb-sdb1 de este repositorio.
 
-Al arrancar en modo uefi, usando el archivo "bootia32.efi" en las tablet de 9v y el archivo BOOTx64.efi en las de 5v, de la carpeta EFI, accede en la primera partición a la configuración del arranque alojada en el archivo grub.cfg. 
+Al arrancar en modo uefi,hay que usar el archivo "bootia32.efi" en las tablet de 9v y el archivo BOOTx64.efi en las de 5v, colocados en una carpeta llamada EFI, así se accede en la primera partición a la configuración del arranque alojada en el archivo grub.cfg. 
 
 El archivo grub.cfg lleva la configuración para arrancar minino que se encuentra alojado en la segunda partición.
 
@@ -61,7 +61,18 @@ Descargamos este repositorio.
  
  # Instrucciones de instalación en disco
  
- In process...
+ 1. Arrancamos la tablet pulsando la teca "ESC" hasta que accede a la Bios. Buscamos la pestaña BOOT y buscamos el arranque "UEFI USB"
+    Sino aparece, pulsamos en UEFI: Built-in EFI shell y seguimos las siguiente indicaciones.
+    
+    a) Esperamos que terminen los 5 segundo y en la línea de comandos introducimos fs1: y pulsamos Enter. Para introducir los dos puntos tenemos que usar la tecla Mayúscula Derecha y la tecla ñ, ya que aparece como si fuese un teclado inglés.
+    
+    b) Introducimos en la terminal: cd EFI y pulsamos la tecla ENTER.
+    
+    c) Introducimos en la terminal: cd BOOT y pulsamos la tecla ENTER.
+    
+    d)Introducimos en la terminal: bootia32.efi y pulsamos la tecla ENTER.
+    
+    e) Pulsamos en la opción "minino live" y arrancará el sistema live.
 
 
     
