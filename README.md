@@ -76,7 +76,7 @@ Descargamos este repositorio en un sistema linux.
     
 2. Minino traspasa: a explicar
 
-3. Instalamos el cargador de arranque UEFI REfind que nos facilitará la vida. Si podemos tener internet con un cable usb y el teléfono móvil creando un punto de acceso ejecutaremos la primera línea, en caso contrario tendremos que descargarlo del repositorio en un pendrive y posteriormente agregarlo a la tablet por usb en la carpeta usuario.
+3. Instalamos el cargador de arranque UEFI REfind que nos facilitará la vida. Si podemos tener internet con un cable usb y el teléfono móvil creando un punto de acceso ejecutaremos la primera línea, en caso contrario tendremos que descargarlo del repositorio en un pendrive y posteriormente agregarlo a la tablet por usb en la carpeta usuario. Para ello también borraremos los archivos incluidos en la antigua partición de arranque.
     
      ```bash
      
@@ -92,7 +92,21 @@ Descargamos este repositorio en un sistema linux.
      
      cd refin*
      
+     mkdir mmcblk0p1
+     
+     sudo mount -t vfat /dev/mmcblk0p1 mmcblk0p1
+     
+     cd mmcblk0p1
+     
+     sudo rm -r *
+     
+     cd ..
+     
      sudo ./refind-install --usedefault /dev/mmcblk0p1 --alldrivers
+     
+     sudo umount /dev/mmcblk0p1
+     
+     rmdir mmcblk0p1
      
 Pulsamos la tecla "Y" y la tecla intro y se habŕa quedado instalado en la partición de arranque para arrancar minino.
      
