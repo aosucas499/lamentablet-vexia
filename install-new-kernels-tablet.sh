@@ -59,7 +59,7 @@ sudo rm /boot/confi*
 #Instaamos pavucontrol para el control del sonido y deshabilitamos la ganancia del sonido de guadalinex que en minino suena horrible
 # También instalamos cheese para el control de la cámara web
 sudo apt-get install pavucontrol -y
-sudo sed -i '100 s/^/#g' /etc/rc.local
+sudo sed -i '99 s/^/#/g' /etc/rc.local
 
 #Instalamos kernel 5v
 #dpkg -i linux-image-3.10.20-generic-pae_3.10.20-00.01dda4_i386.deb
