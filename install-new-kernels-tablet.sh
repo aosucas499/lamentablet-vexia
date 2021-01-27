@@ -31,9 +31,11 @@ wget http://centros.edu.guadalinex.org/Edu/precisedda/pool/main/l/linux/linux-im
 #
 
 #Instalamos kernel 9V
+#
 sudo mkdir -p /mnt/efi
 sudo cp fstab /etc/fstab 
 sudo mount -av
+sudo apt-get update -y
 sudo apt-get install -f -y
 sudo dpkg -i linux-firmware_1.79.1_all.deb
 sudo apt-get install -f -y
@@ -41,15 +43,23 @@ sudo dpkg -i linux-image-3.4.43-generic-pae_3.4.43-00.01dda5_i386.deb
 sudo apt-get install -f -y
 sudo mv /mnt/efi/linuxramdisk.img /boot/initrd.img-3.4.43-generic-pae
 sudo mv /mnt/efi/linux.efi /boot/vmlinuz-3.4.43-generic-pae
-#sudo rm /mnt/efi/*
-#sudo mount -t vfat /dev/mmcblk0p1 /mnt/efi
-#sudo cp -r /boot/* /mnt/efi
-#ls /mnt/efi
-#sudo umount /dev/mmcblk0p1
-sudo rm /boot/linux.efi
-sudo rm /boot/linuxramdisk.img
+
+## Generamo grub
+#
 sudo update-grub
 sudo update-grub2
+
+#Borramos imagen linux grub-pc
+#
+sudo rm /boot/initrd*
+sudo rm /boot/Sys*
+sudo rm /boot/vmlinuz*
+sudo rm /boot/confi*
+
+#Instaamos pavucontrol para el control del sonido y deshabilitamos la ganancia del sonido de guadalinex que en minino suena horrible
+sudo apt-get install pavucontrol -y
+sudo sed -i '100 s/^/#g' /etc/rc.local
+
 #Instalamos kernel 5v
 #dpkg -i linux-image-3.10.20-generic-pae_3.10.20-00.01dda4_i386.deb
 
