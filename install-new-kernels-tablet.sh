@@ -41,9 +41,9 @@ sudo dpkg -i linux-firmware_1.79.1_all.deb
 sudo apt-get install -f -y
 sudo dpkg -i linux-image-3.4.43-generic-pae_3.4.43-00.01dda5_i386.deb
 sudo apt-get install -f -y
-sudo mv /mnt/efi/linuxramdisk.img /boot/
-sudo mv /mnt/efi/linux.efi /boot/
-sudo mv /mnt/efi/linuxcomman* /boot/
+#sudo mv /mnt/efi/linuxramdisk.img /boot/
+#sudo mv /mnt/efi/linux.efi /boot/
+#sudo mv /mnt/efi/linuxcommand /boot/
 
 ## Generamo grub
 #
