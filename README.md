@@ -74,7 +74,7 @@ Descargamos este repositorio en un sistema linux.
     
     e) Pulsamos en la opción "minino live" y arrancará el sistema live.
     
-2. Minino traspasa:
+2. Minino install:
 
 Primeramente tendremos que preparar el disco y las particiones. Abrimos la aplicación Gparted, y no tocamos ninguna de las particiones de la tablet salvo la primera y la última. Vamos a formatearlas y cambiarle alguna etiqueta, de la siguiente manera:
 
@@ -82,7 +82,7 @@ Primeramente tendremos que preparar el disco y las particiones. Abrimos la aplic
     
     Partición mmcblk0p14 (en tablet cargador negro 9v) ----- formateamos en fat "ext4" con nombre de etiqueta "MININO" y no tocamos banderas/flags
     
-Posteriormente buscamos la aplicación "minino traspasa" y seleccionamor que traspase el sistema a la partición "mmcblk0p14-MININO"
+Posteriormente buscamos la aplicación "instalador de minino" y seleccionamos una instalación desatendida y manual que haga la instalación del sistema a la partición "mmcblk0p14-MININO"
 
 3. Instalamos el cargador de arranque UEFI REfind que nos facilitará la vida. Si podemos tener internet con un cable usb y el teléfono móvil creando un punto de acceso ejecutaremos la primera línea, en caso contrario tendremos que descargarlo del repositorio en un pendrive y posteriormente agregarlo a la tablet por usb en la carpeta usuario. 
     
