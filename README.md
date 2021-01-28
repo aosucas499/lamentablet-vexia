@@ -74,9 +74,17 @@ Descargamos este repositorio en un sistema linux.
     
     e) Pulsamos en la opción "minino live" y arrancará el sistema live.
     
-2. Minino traspasa: a explicar
+2. Minino traspasa:
 
-3. Instalamos el cargador de arranque UEFI REfind que nos facilitará la vida. Si podemos tener internet con un cable usb y el teléfono móvil creando un punto de acceso ejecutaremos la primera línea, en caso contrario tendremos que descargarlo del repositorio en un pendrive y posteriormente agregarlo a la tablet por usb en la carpeta usuario. Para ello también borraremos los archivos incluidos en la antigua partición de arranque.
+Primeramente tendremos que preparar el disco y las particiones. Abrimos la aplicación Gparted, y no tocamos ninguna de las particiones de la tablet salvo la primera y la última. Vamos a formatearlas y cambiarle alguna etiqueta, de la siguiente manera:
+
+    Partición mmcblk0p1 --- formatear en fat 32 con nombre de etiqueta "EFI" y le asignamos solamente las banderas o flags "boot y "esp". 
+    
+    Partición mmcblk0p14 (en tablet cargador negro 9v) ----- formateamos en fat "ext4" con nombre de etiqueta "MININO" y no tocamos banderas/flags
+    
+Posteriormente buscamos la aplicación "minino traspasa" y seleccionamor que traspase el sistema a la partición "mmcblk0p14-MININO"
+
+3. Instalamos el cargador de arranque UEFI REfind que nos facilitará la vida. Si podemos tener internet con un cable usb y el teléfono móvil creando un punto de acceso ejecutaremos la primera línea, en caso contrario tendremos que descargarlo del repositorio en un pendrive y posteriormente agregarlo a la tablet por usb en la carpeta usuario. 
     
      ```bash
      
@@ -92,25 +100,13 @@ Descargamos este repositorio en un sistema linux.
      
      cd refin*
      
-     mkdir mmcblk0p1
-     
-     sudo mount -t vfat /dev/mmcblk0p1 mmcblk0p1
-     
-     cd mmcblk0p1
-     
-     sudo rm -r *
-     
-     cd ..
-     
      sudo ./refind-install --usedefault /dev/mmcblk0p1 --alldrivers
      
-     sudo umount /dev/mmcblk0p1
-     
-     rmdir mmcblk0p1
-     
-Pulsamos la tecla "Y" y la tecla intro y se habŕa quedado instalado en la partición de arranque para arrancar minino. Reinciamos el equipo y entramos en la bios.
+Pulsamos la tecla "Y", después la tecla intro y se habŕa quedado instalado en la partición de arranque para arrancar minino. Reinciamos el equipo y entramos en la bios, pulsando la tecla "ESC" hasta que accede a ella. Buscamos la pestaña "Boot option priorities" y ponemos como primera opción "UEFI OS".
 
-Arrancamos la tablet pulsando la teca "ESC" hasta que accede a la Bios. Buscamos la pestaña "Boot option priorities" y ponemos como primera opción "UEFI OS"
+Reiniciamos y entrará en minino que aún no dispone de drivers para la tablet, por lo que en el siguiente paso actualizaremos el kernel usado en guadalinex.
+
+4. ....
 
      
      
