@@ -33,7 +33,7 @@ wget http://centros.edu.guadalinex.org/Edu/precisedda/pool/main/l/linux/linux-im
 #Instalamos kernel 9V
 #
 sudo mkdir -p /mnt/efi
-sudo cp fstab /etc/fstab 
+#sudo cp fstab /etc/fstab 
 sudo mount -av
 sudo apt-get update -y
 sudo apt-get install -f -y
@@ -41,8 +41,9 @@ sudo dpkg -i linux-firmware_1.79.1_all.deb
 sudo apt-get install -f -y
 sudo dpkg -i linux-image-3.4.43-generic-pae_3.4.43-00.01dda5_i386.deb
 sudo apt-get install -f -y
-sudo mv /mnt/efi/linuxramdisk.img /boot/initrd.img-3.4.43-generic-pae
-sudo mv /mnt/efi/linux.efi /boot/vmlinuz-3.4.43-generic-pae
+sudo mv /mnt/efi/linuxramdisk.img /boot/
+sudo mv /mnt/efi/linux.efi /boot/
+sudo mv /mnt/efi/linuxcomman* /boot/
 
 ## Generamo grub
 #
@@ -55,6 +56,7 @@ sudo rm /boot/initrd*
 sudo rm /boot/Sys*
 sudo rm /boot/vmlinuz*
 sudo rm /boot/confi*
+sudo rm -r /mnt/efi
 
 #Instaamos pavucontrol para el control del sonido y deshabilitamos la ganancia del sonido de guadalinex que en minino suena horrible
 # También instalamos cheese para el control de la cámara web
