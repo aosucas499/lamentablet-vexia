@@ -22,7 +22,7 @@ sudo apt-get purge --remove firmware-amd-graphics -y
 # Descargamos ambos kernels de las tablet vexia
 #
 wget http://centros.edu.guadalinex.org/Edu/precisedda/pool/main/l/linux-firmware/linux-firmware_1.79.1_all.deb
-wget http://centros.edu.guadalinex.org/Edu/precisedda2/pool/main/l/linux/linux-image-3.10.20-generic-pae_3.10.20-00.01dda4_i386.deb
+#wget http://centros.edu.guadalinex.org/Edu/precisedda2/pool/main/l/linux/linux-image-3.10.20-generic-pae_3.10.20-00.01dda4_i386.deb
 wget http://centros.edu.guadalinex.org/Edu/precisedda/pool/main/l/linux/linux-image-3.4.43-generic-pae_3.4.43-00.01dda5_i386.deb
 
 ## Supuestamente El kernel 3.4.43 es para la tablet con cargador negro a 9V
@@ -59,8 +59,7 @@ sudo rm /boot/confi*
 sudo rm -r /mnt/efi
 
 #Instaamos pavucontrol para el control del sonido y deshabilitamos la ganancia del sonido de guadalinex que en minino suena horrible
-# También instalamos cheese para el control de la cámara web
-sudo apt-get install pavucontrol -y
+#sudo apt-get install pavucontrol -y
 sudo sed -i '99 s/^/#/g' /etc/rc.local
 
 #Instalamos kernel 5v
