@@ -74,12 +74,8 @@ sudo rm -r /mnt/efi
 sudo sed -i '99 s/^/#/g' /etc/rc.local
 
 #Desmontamos particiones innesarias de la tablet en el inicio
-sudo sed -i '$ i\umount /dev/mmcblk0p3' /etc/rc.local
-sudo sed -i '$ i\umount /dev/mmcblk0p5' /etc/rc.local
-sudo sed -i '$ i\umount /dev/mmcblk0p6' /etc/rc.local
-sudo sed -i '$ i\umount /dev/mmcblk0p7' /etc/rc.local
-sudo sed -i '$ i\umount /dev/mmcblk0p8' /etc/rc.local
-sudo sed -i '$ i\umount /dev/mmcblk0p9' /etc/rc.local
+#sudo sed -i '$ i\umount /dev/mmcblk0p3' /etc/rc.local
+
 
 #Instalamos kernel 5v
 #dpkg -i linux-image-3.10.20-generic-pae_3.10.20-00.01dda4_i386.deb
