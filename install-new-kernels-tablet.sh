@@ -64,9 +64,21 @@ sudo rm /boot/vmlinuz*
 sudo rm /boot/confi*
 sudo rm -r /mnt/efi
 
-#Instaamos pavucontrol para el control del sonido y deshabilitamos la ganancia del sonido de guadalinex que en minino suena horrible
+#Instalamos pavucontrol para el control del sonido 
+#
 #sudo apt-get install pavucontrol -y
+
+#Deshabilitamos la ganancia del sonido de guadalinex que en minino suena horrible
+#
 sudo sed -i '99 s/^/#/g' /etc/rc.local
+
+#Desmontamos particiones innesarias de la tablet en el inicio
+sudo sed -i '$ i\umount /dev/mmcblk0p3' /etc/rc.local
+sudo sed -i '$ i\umount /dev/mmcblk0p5' /etc/rc.local
+sudo sed -i '$ i\umount /dev/mmcblk0p6' /etc/rc.local
+sudo sed -i '$ i\umount /dev/mmcblk0p7' /etc/rc.local
+sudo sed -i '$ i\umount /dev/mmcblk0p8' /etc/rc.local
+sudo sed -i '$ i\umount /dev/mmcblk0p9' /etc/rc.local
 
 #Instalamos kernel 5v
 #dpkg -i linux-image-3.10.20-generic-pae_3.10.20-00.01dda4_i386.deb
