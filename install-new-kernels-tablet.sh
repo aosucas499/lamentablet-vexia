@@ -65,6 +65,14 @@ sudo rm /boot/vmlinuz*
 sudo rm /boot/confi*
 sudo rm -r /mnt/efi
 
+# Copiar al sistema script que desmonta particiones que no se usan de la tablet al inicio
+    sudo cp umount-sd-tablet /usr/bin
+    sudo chmod +x /usr/bin/umount-sd-tablet
+    sudo chown root:root zz-umount-sd-tablet
+    sudo chmod 0440 zz-umount-sd-tablet
+    sudo cp zz-umount-sd-tablet /etc/sudoers.d/ 
+    sudo cp umount-sd-tablet.desktop /etc/xdg/autostart/
+
 #Instalamos pavucontrol para el control del sonido 
 #
 #sudo apt-get install pavucontrol -y
