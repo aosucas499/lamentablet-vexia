@@ -71,7 +71,7 @@ sudo rm -r /mnt/efi
 
 #Deshabilitamos la ganancia del sonido de guadalinex que en minino suena horrible
 #
-sudo sed -i '99 s/^/#/g' /etc/rc.local
+#sudo sed -i '99 s/^/#/g' /etc/rc.local
 
 #Desmontamos particiones innesarias de la tablet en el inicio
 #sudo sed -i '$ i\umount /dev/mmcblk0p3' /etc/rc.local
