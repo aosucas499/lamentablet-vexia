@@ -66,24 +66,15 @@ sudo rm /boot/confi*
 sudo rm -r /mnt/efi
 
 # Copiar al sistema script que desmonta particiones que no se usan de la tablet al inicio
-    sudo cp umount-sd-tablet /usr/bin
-    sudo chmod +x /usr/bin/umount-sd-tablet
-    sudo chown root:root zz-umount-sd-tablet
-    sudo chmod 0440 zz-umount-sd-tablet
-    sudo cp zz-umount-sd-tablet /etc/sudoers.d/ 
-    sudo cp umount-sd-tablet.desktop /etc/xdg/autostart/
+sudo cp 99-hide-disk.rules /etc/udev/rules.d/
 
 #Instalamos pavucontrol para el control del sonido 
 #
-#sudo apt-get install pavucontrol -y
+sudo apt-get install pavucontrol -y
 
 #Deshabilitamos la ganancia del sonido de guadalinex que en minino suena horrible
 #
 #sudo sed -i '99 s/^/#/g' /etc/rc.local
-
-#Desmontamos particiones innesarias de la tablet en el inicio
-#sudo sed -i '$ i\umount /dev/mmcblk0p3' /etc/rc.local
-
 
 #Instalamos kernel 5v
 #dpkg -i linux-image-3.10.20-generic-pae_3.10.20-00.01dda4_i386.deb
