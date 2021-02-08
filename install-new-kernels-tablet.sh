@@ -88,14 +88,15 @@ sudo rm -r /mnt/efi
 #sudo apt-get purge --remove xserver-xorg-core -y
 #sudo apt-get install xserver-xorg-core -y
 #sudo apt-get install xserver-xorg-input-all -y
-#sudo apt-get install xserver-xorg-input-multitouchdda -y
+sudo apt-get install xserver-xorg-input-multitouchdda -y
 #sudo apt-get install xserver-xorg-video-intel -y
 #sudo apt-get install xserver-xorg-video-fbdev -y
 #sudo apt-get install xserver-xorg-video-openchrome -y
 #sudo apt-get install xorg -y
 
-#sudo apt-get install cga-udev-config -y
+sudo apt-get install cga-udev-config -y
 
+sudo mv /etc/apt/sources.list.save /etc/apt/sources.list
 
 
 
