@@ -26,6 +26,7 @@ wget http://centros.edu.guadalinex.org/Edu/precisedda/pool/main/l/linux/linux-im
 wget http://centros.edu.guadalinex.org/Edu/precisedda/pool/main/l/linux-meta/linux-image-generic-pae_3.4.43-00.01dda2_i386.deb
 wget http://centros.edu.guadalinex.org/Edu/precisedda/pool/main/l/linux-meta/linux-generic-pae_3.4.43-00.01dda2_i386.deb
 #wget http://centros.edu.guadalinex.org/Edu/precisedda2/pool/main/l/linux/linux-image-3.10.20-generic-pae_3.10.20-00.01dda4_i386.deb
+wget http://centros.edu.guadalinex.org/Edu/catcornerdda/pool/main/g/guadalinexedu-keyring/guadalinexedu-keyring_0.1-10_all.deb
 
 
 ## Supuestamente El kernel 3.4.43 es para la tablet con cargador negro a 9V
@@ -72,6 +73,19 @@ sudo apt-get install pavucontrol -y
 #Deshabilitamos la ganancia del sonido de guadalinex que en minino suena horrible
 #
 #sudo sed -i '99 s/^/#/g' /etc/rc.local
+
+#Drivers táctil
+
+#sudo dpkg -i guadalinexedu-keyring_0.1-10_all.deb
+#sudo mv /etc/apt/sources.list /etc/apt/sources.list.save
+#sudo echo "deb http://centros.edu.guadalinex.org/Edu/precise precise main" > sources.list
+#sudo echo "deb http://centros.edu.guadalinex.org/Edu/catcorner guadalinexedu main" >> sources.list
+#sudo cp sources.list /etc/apt
+#sudo apt-get update -y
+
+
+
+
 
 #Instalamos kernel 5v
 #dpkg -i linux-image-3.10.20-generic-pae_3.10.20-00.01dda4_i386.deb
