@@ -57,7 +57,7 @@ sudo apt-get update -y
 #sudo apt-get install -f -y
 #sudo dpkg -i linux-generic-pae_3.4.43-00.01dda2_i386.deb
 #sudo apt-get install -f -y
-sudo apt-get install -y linux-image-3.4.43-generic-pae_3.4.43-00
+sudo apt-get install -y linux-image-3.4.43-generic-pae
 sudo apt-get install -y linux-firmware
 sudo mv /mnt/efi/linuxramdisk.img /boot/
 sudo mv /mnt/efi/linux.efi /boot/
