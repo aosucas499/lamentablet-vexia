@@ -1,6 +1,9 @@
 #! /bin/bash
 #
 
+#Instalamos pavucontrol para el control del sonido 
+#
+#sudo apt-get install pavucontrol -y
 
 # Remover paquetes de firmware incompatibles con la instalación del firmare de la tablet o kernel
 #cd /home/$USER
@@ -76,26 +79,23 @@ sudo rm /boot/vmlinuz*
 sudo rm /boot/confi*
 sudo rm -r /mnt/efi
 
-#Instalamos pavucontrol para el control del sonido 
-#
-sudo apt-get install pavucontrol -y
-
 #Deshabilitamos la ganancia del sonido de guadalinex que en minino suena horrible
 #
 #sudo sed -i '99 s/^/#/g' /etc/rc.local
 
 #Drivers táctil
 #
-#sudo apt-get purge --remove xserver-xorg-core
-#sudo apt-get install xserver-xorg-core
-#sudo apt-get install xserver-xorg-video-intel
-#sudo apt-get install xserver-xorg-input-evdev
-#sudo apt-get install xserver-xorg-input-synaptics
-#sudo apt-get install xserver-xorg-input-mouse
-#sudo apt-get install xserver-xorg-input-vmmouse
-#sudo apt-get install xserver-xorg-input-multitouchdda
-#sudo apt-get install xserver-xorg-input-all
-#sudo apt-get install xorg
+#sudo apt-get purge --remove xserver-xorg-core -y
+#sudo apt-get install xserver-xorg-core -y
+#sudo apt-get install xserver-xorg-input-all -y
+#sudo apt-get install xserver-xorg-input-multitouchdda -y
+#sudo apt-get install xserver-xorg-video-intel -y
+#sudo apt-get install xserver-xorg-video-fbdev -y
+#sudo apt-get install xserver-xorg-video-openchrome -y
+#sudo apt-get install xorg -y
+
+#sudo apt-get install cga-udev-config -y
+
 
 
 
