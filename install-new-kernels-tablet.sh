@@ -90,7 +90,7 @@ sudo apt-get install pavucontrol -y
 #sudo apt-get install xserver-xorg-input-mouse
 #sudo apt-get install xserver-xorg-input-vmmouse
 #sudo apt-get install xserver-xorg-input-multitouchdda
-
+#sudo apt-get install xorg
 
 
 
