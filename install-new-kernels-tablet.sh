@@ -65,9 +65,6 @@ sudo rm /boot/vmlinuz*
 sudo rm /boot/confi*
 sudo rm -r /mnt/efi
 
-# Copiar al sistema script que desmonta particiones que no se usan de la tablet al inicio
-sudo cp 99-hide-disk.rules /etc/udev/rules.d/
-
 #Instalamos pavucontrol para el control del sonido 
 #
 sudo apt-get install pavucontrol -y
