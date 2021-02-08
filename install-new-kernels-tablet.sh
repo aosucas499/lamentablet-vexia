@@ -100,13 +100,6 @@ sudo mv /etc/apt/sources.list.save /etc/apt/sources.list
 
 
 
-
-
-
-
-
-
-
 #Instalamos kernel 5v
 #dpkg -i linux-image-3.10.20-generic-pae_3.10.20-00.01dda4_i386.deb
 
