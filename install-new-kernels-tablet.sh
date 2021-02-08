@@ -82,6 +82,20 @@ sudo apt-get install pavucontrol -y
 #sudo echo "deb http://centros.edu.guadalinex.org/Edu/catcornerdda guadalinexedu main" >> sources.list
 #sudo cp sources.list /etc/apt
 #sudo apt-get update -y
+#sudo apt-get purge --remove xserver-xorg-core
+#sudo apt-get install xserver-xorg-core
+#sudo apt-get install xserver-xorg-video-intel
+#sudo apt-get install xserver-xorg-input-evdev
+#sudo apt-get install xserver-xorg-input-synaptics
+#sudo apt-get install xserver-xorg-input-mouse
+#sudo apt-get install xserver-xorg-input-vmmouse
+#sudo apt-get install xserver-xorg-input-multitouchdda
+
+
+
+
+
+
 
 
 
