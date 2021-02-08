@@ -78,8 +78,8 @@ sudo apt-get install pavucontrol -y
 
 #sudo dpkg -i guadalinexedu-keyring_0.1-10_all.deb
 #sudo mv /etc/apt/sources.list /etc/apt/sources.list.save
-#sudo echo "deb http://centros.edu.guadalinex.org/Edu/precise precise main" > sources.list
-#sudo echo "deb http://centros.edu.guadalinex.org/Edu/catcorner guadalinexedu main" >> sources.list
+#sudo echo "deb http://centros.edu.guadalinex.org/Edu/precisedda precise main" > sources.list
+#sudo echo "deb http://centros.edu.guadalinex.org/Edu/catcornerdda guadalinexedu main" >> sources.list
 #sudo cp sources.list /etc/apt
 #sudo apt-get update -y
 
