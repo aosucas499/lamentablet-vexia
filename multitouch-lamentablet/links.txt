@@ -9,3 +9,5 @@ https://wiki.ubuntu.com/CustomXSession
 https://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml
 
 https://www.x.org/releases/current/doc/man/man1/xinput.1.xhtml
+
+https://wiki.somlabs.com/index.php/How_to_enable_support_for_FT5x06_Multi-Touch_Controller_on_VisionSOM-6ULL
