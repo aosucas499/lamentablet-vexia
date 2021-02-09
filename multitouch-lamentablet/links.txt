@@ -1,0 +1,7 @@
+http://bitmath.org/code/multitouch/
+
+https://packages.debian.org/stretch/i386/xserver-xorg-input-multitouch
+
+https://askubuntu.com/questions/133563/how-to-configure-the-xinput-driver-multitouch-with-absolute-axes
+
+https://wiki.ubuntu.com/CustomXSession
