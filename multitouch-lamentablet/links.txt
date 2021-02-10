@@ -1,4 +1,34 @@
 http://bitmath.org/code/multitouch/
+#Código compilar
+git clone http://bitmath.org/git/multitouch.git 
+
+#ver ramas del código
+git ls-remote origin
+
+#ramas código
+refs/heads/master
+refs/tags/alpha-1
+refs/tags/v1.0-alpha1
+refs/tags/v1.0-alpha2
+refs/tags/v1.0-alpha3
+refs/tags/v1.0-beta1
+refs/tags/v1.0-rc1
+refs/tags/v1.0-rc2
+refs/tags/v1.0-rc3
+
+
+#establecer una etiqueta en local
+git checkout "nombre etiqueta"
+
+#paquetes necesarios para compilar
+sudo apt-get install xserver-xorg-dev xorg-dev libtoolize aclocal autoconf automake gcc
+
+#Compilar
+sudo make 
+sudo make install
+
+
+
 
 https://packages.debian.org/stretch/i386/xserver-xorg-input-multitouch
 
