@@ -113,7 +113,9 @@ Pulsamos la tecla "Y", después la tecla intro y se habŕa quedado instalado en 
  
         sudo mount -t vfat /dev/mmcblk0p1 mmcblk0p1
         
-        sudo cp splash.png mmcblk0p1/EFI/BOOT
+        cd ..
+        
+        sudo cp splash.png refind*/mmcblk0p1/EFI/BOOT
     
         sudo sed -i "s/timeout 20/timeout 8/g" mmcblk0p1/EFI/BOOT/refind.conf
         
