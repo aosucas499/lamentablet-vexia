@@ -76,7 +76,7 @@ Descargamos este repositorio en un sistema linux.
     
 2. Minino install:
 
-Primeramente tendremos que preparar el disco y las particiones. Abrimos la aplicación Gparted, y no tocamos ninguna de las particiones de la tablet salvo la primera y la última. Vamos a formatearlas y cambiarle alguna etiqueta, de la siguiente manera:
+Primeramente tendremos que preparar el disco y las particiones. Abrimos la aplicación Gparted y todas borramos las particiones de la tablet salvo la primera y la última. Vamos a formatearlas y cambiarle alguna etiqueta, de la siguiente manera:
 
     Partición mmcblk0p1 --- formatear en fat 32 con nombre de etiqueta "EFI" y le asignamos solamente las banderas o flags "boot y "esp". 
     
