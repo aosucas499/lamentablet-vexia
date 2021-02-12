@@ -1,1 +1,0 @@
-console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=0 kmemleak=off androidboot.bootmedia=sdcard androidboot.hardware=byt_m_crb watchdog.watchdog_thresh=60 androidboot.spid=xxxx:xxxx:xxxx:xxxx:xxxx:xxxx oops=panic panic=40 vmalloc=172M vga=current i915.modeset=1 drm.vblankoffdelay=1 acpi_backlight=vendor initrd=ramdisk.img
