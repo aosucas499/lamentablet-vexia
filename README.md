@@ -119,7 +119,7 @@ Pulsamos la tecla "Y", después la tecla intro y se habŕa quedado instalado en 
     
         sudo sed -i "s/timeout 20/timeout 8/g" refind*/mmcblk0p1/EFI/BOOT/refind.conf
         
-        sudo sed -i "s/#banner mybanner.png/banner splash.png/g" refind*/refind.conf-sample
+        sudo sed -i "s/#banner mybanner.png/banner splash.png/g" refind*/refind.conf
 
         sudo umount /dev/mmcblk0p1
         
