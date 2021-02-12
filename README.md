@@ -29,9 +29,7 @@ Descargamos este repositorio en un sistema linux.
  
     sudo mount /dev/sdX1 efiusb (X= b, c, d. Dependiendo de cómo se montó el usb. Usar df o gparted para saberlo)
     
-    cd lamentablet-vexia
-    
-    cd usb-sdx1
+    cd lamentablet-vexia/boot/boot-usb-live
     
     sudo cp -r * /home/$USER/efiusb
     
@@ -80,6 +78,8 @@ Primeramente tendremos que preparar el disco y las particiones. Abrimos la aplic
 
     Partición mmcblk0p1 --- formatear en fat 32 con nombre de etiqueta "EFI" y le asignamos solamente las banderas o flags "boot y "esp". 
     
+    Borramos todas las particiones restantes, de la 2 a la 13.
+    
     Partición mmcblk0p14 (en tablet cargador negro 9v) ----- formateamos en fat "ext4" con nombre de etiqueta "MININO" y no tocamos banderas/flags
     
 Posteriormente buscamos la aplicación "instalador de minino" y seleccionamos una instalación desatendida y manual que haga la instalación del sistema a la partición "mmcblk0p14-MININO"
@@ -92,7 +92,7 @@ Posteriormente buscamos la aplicación "instalador de minino" y seleccionamos un
      
      git clone https://github.com/aosucas499/lamentablet-vexia
      
-     cd lamentablet-vexia
+     cd lamentablet-vexia/boot
      
      unzip refin*.zip
      
