@@ -27,7 +27,7 @@ Descargamos este repositorio en un sistema linux.
     ```bash
     mkdir efiusb 
  
-    sudo mount /dev/sdX1 efiusb (X= b, c, d. Dependiendo de cómo se montó el usb. Usar df o gparted para saberlo)
+    sudo mount -t vfat /dev/sdX1 efiusb (X= b, c, d. Dependiendo de cómo se montó el usb. Usar df o gparted para saberlo)
     
     cd lamentablet-vexia/boot/boot-usb-live
     
@@ -57,7 +57,7 @@ Descargamos este repositorio en un sistema linux.
   
   En el apartado "unidad", seleccionamos la segunda partición, formateada en "ext4" y que anteriormente sería "sdX2". Para terminar pulsamos en "instalar".
  
- # Instrucciones de instalación en disco
+ # Instrucciones de instalación de MININO #TDE en disco
  
  1. Introducimos el usb en la tablet, mejor en la parte izquierda, por OTG y arrancamos la tablet pulsando la teca "ESC" hasta que accede a la Bios. Buscamos la pestaña BOOT y buscamos el arranque "UEFI USB"
     Sino aparece, pulsamos en UEFI: Built-in EFI shell y seguimos las siguiente indicaciones:
@@ -88,7 +88,7 @@ Posteriormente buscamos la aplicación "instalador de minino" y seleccionamos un
     
      ```bash
      
-     cd ~
+     cd /home/$USER
      
      git clone https://github.com/aosucas499/lamentablet-vexia
      
@@ -102,11 +102,33 @@ Posteriormente buscamos la aplicación "instalador de minino" y seleccionamos un
      
      sudo ./refind-install --usedefault /dev/mmcblk0p1 --alldrivers
      
-Pulsamos la tecla "Y", después la tecla intro y se habŕa quedado instalado en la partición de arranque para arrancar minino. Reinciamos el equipo y entramos en la bios, pulsando la tecla "ESC" hasta que accede a ella. Buscamos la pestaña "Boot option priorities" y ponemos como primera opción "UEFI OS".
+Pulsamos la tecla "Y", después la tecla intro y se habŕa quedado instalado en la partición de arranque para arrancar minino. 
+
+4. Configuramos un poco la imagen y arranque de Refind.
+
+        mkdir mmcblk0p1 
+ 
+        sudo mount -t vfat /dev/mmcblk0p1 mmcblk0p1
+        
+        sudo cp splash.png mmcblk0p1/EFI/BOOT
+    
+        sudo sed -i "s/timeout 20/timeout 8/g" mmcblk0p1/EFI/BOOT/refind.conf
+        
+        sudo sed -i "s/#banner mybanner.png/banner splash.png/g" refind.conf-sample
+
+        sudo umount /dev/mmcblk0p1
+        
+        cd /home/$USER
+  
+        sudo rm -r lamentablet-vexia
+        
+        
+        
+Reinciamos el equipo y entramos en la bios, pulsando la tecla "ESC" hasta que accede a ella. Buscamos la pestaña "Boot option priorities" y ponemos como primera opción "UEFI OS".
 
 Reiniciamos y entrará en minino que aún no dispone de drivers para la tablet, por lo que en el siguiente paso actualizaremos el kernel usado en guadalinex.
 
-4. ....
+
 
      
      
