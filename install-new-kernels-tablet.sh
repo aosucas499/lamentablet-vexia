@@ -83,6 +83,11 @@ sudo rm -r /mnt/efi
 #
 #sudo sed -i '99 s/^/#/g' /etc/rc.local
 
+#Deshabilitamos la cámara trasera, ya que aunque se cambien configuraciones, siempre monta la trasera.
+sudo sed -i '$ i\rm /dev/video0' /etc/rc.local
+sudo sed -i '$ i\ln -s /dev/video0 /dev/video1' /etc/rc.local
+
+
 #Drivers táctil
 #
 #sudo apt-get purge --remove xserver-xorg-core -y
