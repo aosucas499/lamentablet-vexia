@@ -131,8 +131,26 @@ Reinciamos el equipo y entramos en la bios, pulsando la tecla "ESC" hasta que ac
 Reiniciamos y entrará en minino que aún no dispone de drivers para la tablet, por lo que en el siguiente paso actualizaremos el kernel usado en guadalinex.
 
 
+## Instalar kernel de Guadalinex Edu para que funcionen los drivers de wifi, sonido, táctil...
 
-     
+Mencionado al principio el problema por el que se toma esta decisión, los pasos son instalar un script que se encarga de instalar el kernel de guadalinex, adaptar el arranque UEFI de Minino para que lo acepte el Bootloader REFIND, reparar el problema de la cámara web y el táctil de la pantalla.
+
+    git clone https://github.com/aosucas499/lamentablet-vexia
+       
+    cd lamentablet-vexia
+    
+    chmod +x install-minino-config.sh
+    
+    ./install-minino-config.sh
+    
+Reiniciamos y tendremos la tablet con los drivers necesarios para su funcionamiento.
+
+
+Ya solo nos queda crear una imagen con CLONEZILLA como se hizo con guadalinex para distribuir.
+      
+      
+      
+        
      
      
      
