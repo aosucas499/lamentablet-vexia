@@ -148,6 +148,12 @@ Si podemos tener internet con un cable usb y el teléfono móvil creando un punt
     
 Reiniciamos y tendremos la tablet con los drivers necesarios para su funcionamiento.
 
+## Pequeños arreglos para el uso en tablet
+
+1. Añadimos a la barra de aplicaciones inferior el teclado virtual florence por si se usa en modo tablet y no tenemos teclado.
+
+2. Añadimos el autologin con la aplicación "customize-minino" por si arrancamos en modo tablet y no podemos introducir el login.
+
 
 Ya solo nos queda crear una imagen con CLONEZILLA como se hizo con guadalinex para distribuir.
       
