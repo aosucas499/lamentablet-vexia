@@ -88,7 +88,7 @@ sudo sed -i '$ i\rm /dev/video0' /etc/rc.local
 sudo sed -i '$ i\ln -s /dev/video0 /dev/video1' /etc/rc.local
 
 
-#Drivers táctil
+#Drivers táctil guadalinex
 #
 #sudo apt-get purge --remove xserver-xorg-core -y
 #sudo apt-get install xserver-xorg-core -y
@@ -102,8 +102,15 @@ sudo apt-get install xserver-xorg-input-multitouchdda -y
 #Reglas de guadalinex edu
 sudo apt-get install cga-udev-config -y
 
-#Borramos repositorio guadalinex y volvemos a debian jessie
+#Borramos repositorio guadalinex y volvemos a debian jessie, así como este repo git
 sudo mv /etc/apt/sources.list.save /etc/apt/sources.list
+cd ..
+sudo rm -r lamentablet*
+
+#Compilamos driver multitouch compatible xorg gráfico minino TDE
+git clone http://bitmath.org/git/multitouch.git
+
+
 
 
 
