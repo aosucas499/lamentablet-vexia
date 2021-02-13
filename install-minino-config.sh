@@ -107,17 +107,21 @@ sudo mv /etc/apt/sources.list.save /etc/apt/sources.list
 sudo apt-get update -y
 
 #Compilamos driver multitouch compatible xorg gráfico minino TDE
-cd ..
-git clone http://bitmath.org/git/multitouch.git
-sudo apt-get install xserver-xorg-dev xorg-dev autoconf automake gcc -y
-cd multitouch
-sudo make
-sudo make install
+#cd ..
+#git clone http://bitmath.org/git/multitouch.git
+#sudo apt-get install xserver-xorg-dev xorg-dev autoconf automake gcc -y
+#cd multitouch
+#sudo make
+#sudo make install
+
+
+#copiamos driver multitouch para minino
+sudo cp multitouch/modules/usr/lib/xorg/modules/input/multitouch_drv-jessie.so /usr/lib/xorg/modules/input/
 
 # Borramos repos lamentablet y multitouch
 cd /home/$USER
 sudo rm -r lamentablet*
-sudo rm -r multitouch
+#sudo rm -r multitouch
 
 
 
