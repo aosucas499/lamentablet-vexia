@@ -104,6 +104,7 @@ sudo apt-get install cga-udev-config -y
 
 #Borramos repositorio guadalinex y volvemos a debian jessie
 sudo mv /etc/apt/sources.list.save /etc/apt/sources.list
+sudo apt-get update -y
 
 #Compilamos driver multitouch compatible xorg gráfico minino TDE
 cd ..
