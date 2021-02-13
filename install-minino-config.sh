@@ -102,14 +102,21 @@ sudo apt-get install xserver-xorg-input-multitouchdda -y
 #Reglas de guadalinex edu
 sudo apt-get install cga-udev-config -y
 
-#Borramos repositorio guadalinex y volvemos a debian jessie, así como este repo git
+#Borramos repositorio guadalinex y volvemos a debian jessie
 sudo mv /etc/apt/sources.list.save /etc/apt/sources.list
-cd ..
-sudo rm -r lamentablet*
 
 #Compilamos driver multitouch compatible xorg gráfico minino TDE
+cd ..
 git clone http://bitmath.org/git/multitouch.git
+sudo apt-get install xserver-xorg-dev xorg-dev libtoolize aclocal autoconf automake gcc -y
+cd multitouch
+sudo make
+sudo make install
 
+# Borramos repos lamentablet y multitouch
+cd /home/$USER
+sudo rm -r lamentablet*
+sudo rm multitouch
 
 
 
