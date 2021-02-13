@@ -87,11 +87,9 @@ Primeramente tendremos que preparar el disco y las particiones. Abrimos la aplic
     
 Posteriormente buscamos la aplicación "instalador de minino" y seleccionamos una instalación desatendida y manual que haga la instalación del sistema a la partición "mmcblk0p14-MININO"
 
-3. Instalamos el cargador de arranque UEFI REfind que nos facilitará la vida. Si podemos tener internet con un cable usb y el teléfono móvil creando un punto de acceso ejecutaremos la primera línea, en caso contrario tendremos que descargarlo del repositorio en un pendrive y posteriormente agregarlo a la tablet por usb en la carpeta usuario. 
+3. Instalamos el cargador de arranque UEFI REfind que nos facilitará la vida. Si podemos tener internet con un cable usb y el teléfono móvil creando un punto de acceso ejecutaremos la primera línea, en caso contrario tendremos que descargar este repositorio en un pendrive y posteriormente agregarlo a la tablet por usb en la carpeta usuario  y empezaremos en la segunda línea.
     
      ```bash
-     
-     cd /home/$USER
      
      git clone https://github.com/aosucas499/lamentablet-vexia
      
@@ -137,6 +135,8 @@ Reiniciamos y entrará en minino que aún no dispone de drivers para la tablet, 
 ## Instalar kernel de Guadalinex Edu para que funcionen los drivers de wifi, sonido, táctil...
 
 Mencionado al principio el problema por el que se toma esta decisión, los pasos son instalar un script que se encarga de instalar el kernel de guadalinex, adaptar el arranque UEFI de Minino para que lo acepte el Bootloader REFIND, reparar el problema de la cámara web y el táctil de la pantalla.
+
+Si podemos tener internet con un cable usb y el teléfono móvil creando un punto de acceso ejecutaremos la primera línea, en caso contrario tendremos que descargar este repositorio en un pendrive y posteriormente agregarlo a la tablet por usb en la carpeta usuario y empezaremos en la segunda línea.
 
     git clone https://github.com/aosucas499/lamentablet-vexia
        
