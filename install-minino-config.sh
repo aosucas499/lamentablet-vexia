@@ -116,7 +116,7 @@ sudo apt-get update -y
 
 
 #copiamos driver multitouch para minino
-sudo cp multitouch/modules/usr/lib/xorg/modules/input/multitouch_drv-jessie.so /usr/lib/xorg/modules/input/
+sudo cp multitouch/modules/usr/lib/xorg/modules/input/multitouch_drv-jessie.so /usr/lib/xorg/modules/input/multitouch_drv.so
 
 # Borramos repos lamentablet y multitouch
 cd /home/$USER
