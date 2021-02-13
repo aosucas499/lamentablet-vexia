@@ -109,7 +109,7 @@ sudo apt-get update -y
 #Compilamos driver multitouch compatible xorg gráfico minino TDE
 cd ..
 git clone http://bitmath.org/git/multitouch.git
-sudo apt-get install xserver-xorg-dev xorg-dev libtoolize aclocal autoconf automake gcc -y
+sudo apt-get install xserver-xorg-dev xorg-dev autoconf automake gcc -y
 cd multitouch
 sudo make
 sudo make install
