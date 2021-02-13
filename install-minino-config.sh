@@ -116,7 +116,7 @@ sudo make install
 # Borramos repos lamentablet y multitouch
 cd /home/$USER
 sudo rm -r lamentablet*
-sudo rm multitouch
+sudo rm -r multitouch
 
 
 
