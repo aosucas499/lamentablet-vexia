@@ -3,7 +3,7 @@
 
 #Instalamos pavucontrol para el control del sonido 
 #
-#sudo apt-get install pavucontrol -y
+sudo apt-get install pavucontrol -y
 
 # Remover paquetes de firmware incompatibles con la instalación del firmare de la tablet o kernel
 #cd /home/$USER
@@ -100,7 +100,7 @@ sudo apt-get install xserver-xorg-input-multitouchdda -y
 #sudo apt-get install xorg -y
 
 #Reglas de guadalinex edu
-sudo apt-get install cga-udev-config -y
+#sudo apt-get install cga-udev-config -y
 
 #Borramos repositorio guadalinex y volvemos a debian jessie
 sudo mv /etc/apt/sources.list.save /etc/apt/sources.list
