@@ -3,6 +3,7 @@
 
 #Instalamos pavucontrol para el control del sonido 
 #
+sudo apt-get update -y
 sudo apt-get install pavucontrol -y
 
 # Remover paquetes de firmware incompatibles con la instalación del firmare de la tablet o kernel
