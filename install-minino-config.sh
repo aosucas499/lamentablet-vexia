@@ -107,6 +107,9 @@ sudo apt-get install xserver-xorg-input-multitouchdda -y
 sudo mv /etc/apt/sources.list.save /etc/apt/sources.list
 sudo apt-get update -y
 
+#copiamos driver multitouch para minino
+sudo cp multitouch/modules/usr/lib/xorg/modules/input/multitouch_drv-jessie.so /usr/lib/xorg/modules/input/multitouch_drv.so
+
 #Compilamos driver multitouch compatible xorg gráfico minino TDE
 #
 #sudo apt-get install xserver-xorg-dev xorg-dev autoconf automake gcc -y
@@ -122,9 +125,8 @@ sudo apt-get update -y
 #cd ../multi*
 #sudo make
 #sudo make install
-
-#copiamos driver multitouch para minino
-sudo cp multitouch/modules/usr/lib/xorg/modules/input/multitouch_drv-jessie.so /usr/lib/xorg/modules/input/multitouch_drv.so
+#cd /home/$USER
+#sudo rm /usr/lib/xorg/modules/input/multitouch_drv.so
 
 # Borramos repos lamentablet y multitouch
 cd /home/$USER
