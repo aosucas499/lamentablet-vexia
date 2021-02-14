@@ -108,13 +108,20 @@ sudo mv /etc/apt/sources.list.save /etc/apt/sources.list
 sudo apt-get update -y
 
 #Compilamos driver multitouch compatible xorg gráfico minino TDE
+#
+#sudo apt-get install xserver-xorg-dev xorg-dev autoconf automake gcc -y
 #cd ..
 #git clone http://bitmath.org/git/multitouch.git
-#sudo apt-get install xserver-xorg-dev xorg-dev autoconf automake gcc -y
-#cd multitouch
+#wget http://bitmath.org/code/mtdev/mtdev-1.1.6.tar.gz
+#tar -xzvf mtdev-1.1.6.tar.gz
+#rm mtdev-1.1.6.tar.gz
+#cd mtdev*
+#sudo ./configure
 #sudo make
 #sudo make install
-
+#cd ../multi*
+#sudo make
+#sudo make install
 
 #copiamos driver multitouch para minino
 sudo cp multitouch/modules/usr/lib/xorg/modules/input/multitouch_drv-jessie.so /usr/lib/xorg/modules/input/multitouch_drv.so
@@ -123,8 +130,7 @@ sudo cp multitouch/modules/usr/lib/xorg/modules/input/multitouch_drv-jessie.so /
 cd /home/$USER
 sudo rm -r lamentablet*
 #sudo rm -r multitouch
-
-
+#sudo rm -r mtdev*
 
 
 #Instalamos kernel 5v
