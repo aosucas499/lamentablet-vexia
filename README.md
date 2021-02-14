@@ -156,6 +156,64 @@ Reiniciamos y tendremos la tablet con los drivers necesarios para su funcionamie
 
 
 Ya solo nos queda crear una imagen con CLONEZILLA como se hizo con guadalinex para distribuir.
+
+## Creación usb-live clonezilla soporte UEFI
+
+1. Con gparted se debe de crear una partición de 512mb, formateada en fat32 y con las banderas "boot" y "esp"en el usb. (sdX1, siendo la x=b, c, d...)
+
+2. Crear una segunda partición cubriendo el total que quede del usb. Formateada en "ext4" (sdX2, siendo la x= la misma que en paso anterior)
+
+3. Instalamos el cargador de arranque UEFI REfind en la partición primera fat32.
+    
+     ```bash
+     
+     git clone https://github.com/aosucas499/lamentablet-vexia
+     
+     cd lamentablet-vexia/boot
+     
+     unzip refin*.zip
+     
+     rm *.zip
+     
+     cd refin*
+     
+     sudo ./refind-install --usedefault /dev/sdX1 --alldrivers
+     
+     cd /home/$USER
+     
+     sudo rm -r lamentablet*
+     
+4. Descargamos una versión .zip de clonezilla para colocarla en la partición sdX2.
+ 
+  Enlace: https://sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/2.5.2-31/clonezilla-live-2.5.2-31-amd64.zip
+   
+Gráficamente, abrimos el archivo .zip y descomprimimos todas las carpetas en la partición sdX2, que estará montada, o desconectamos y conectamos el usb para que la reconozca.
+
+5. Introducimos el usb en la tablet, mejor en la parte izquierda, por OTG y arrancamos la tablet pulsando la teca "ESC" hasta que accede a la Bios. Buscamos la pestaña BOOT y buscamos el arranque "UEFI USB"
+    Sino aparece, pulsamos en UEFI: Built-in EFI shell y seguimos las siguiente indicaciones:
+    
+    a) Esperamos que terminen los 5 segundos y en la línea de comandos introducimos fs1: y pulsamos Enter. Para introducir los dos puntos tenemos que usar la tecla Mayúscula Derecha y la tecla ñ, ya que aparece como si fuese un teclado inglés.
+    
+    b) Introducimos en la terminal: cd EFI y pulsamos la tecla ENTER.
+    
+    c) Introducimos en la terminal: cd BOOT y pulsamos la tecla ENTER.
+    
+    d)Introducimos en la terminal: bootia32.efi y pulsamos la tecla ENTER.
+    
+    e) Pulsamos en la opción "Boot fallback loader from "memoria que asignaste a la partición sdX2 del pendrive" 
+    
+    f) Seleccionamos la primera opción "Clonezilla live"
+    
+    g)
+    
+    
+   
+   
+
+
+    
+    .
+
       
       
       
