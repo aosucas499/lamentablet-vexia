@@ -204,7 +204,49 @@ Gráficamente, abrimos el archivo .zip y descomprimimos todas las carpetas en la
     
     f) Seleccionamos la primera opción "Clonezilla live"
     
-    g)
+    g) Seleccionamos la opción "Teclado en_Us"
+    
+    h) Seleccionamos la opción " Keep the default keyboard"
+    
+    i) Seleccionamos la opción "Start Clonezilla"
+    
+    j) Seleccionamos la opción "Device-image"
+    
+    k) Seleccionamos la opción "local_dev"
+    
+    l) Introducimos en el teclado un pendrive donde guardaremos la imagen del sistema y pulsamos enter cuando pasen unos 5 segundos.
+    
+    m) Pulsamos la tecla Control y c, cuando veamos listados los discos.
+    
+    n) Seleccionamos la opción referida al disco usb donde guardaremos la imagen, el tamaño puede ayudarnos a detectarlo.
+    
+    ñ) Seleccionamos la opción "no-fsck"
+    
+    o) Seleccionamos la opción "home", para que se guarde en una carpeta de la raíz del disco usb.
+    
+    p) Buscamos con la flechas hasta posicionarnos en "Done" y pulsamos la tecla "enter" dos veces.
+    
+    q) Seleccionamos la opción "Beginner".
+    
+    r) Seleccionamos la opción "saveparts", para guardar todo el disco de la tablet pero asignando una imagen a cada partición.
+    
+    s) Pulsamos "enter" aceptando el nombre de la carpeta contenedora de las imagenes en el pendrive.
+    
+    t) Seleccionamos las particiones de la tablet, todas las que empiezan por "mmcblk", posicionándonos en ella y pulsando la tecla "espacio", después con la tecla tabulador (al lado de la letra Q) nos movemos por las opciones y pulsamos "Ok" con la tecla "Enter"
+    
+    u) Seleccionamos la opción "-z1p"
+    
+    v) Seleccionamos la opción "sfsck"
+    
+    w) Seleccionamos la opción "-scs"
+    
+    x) Seleccionamos la opción "-senc"
+    
+    y) Seleccionamos la opción "-p poweroff" para que se apague el dispositivo cuando finalice y pulsamos la tecla "enter"
+    
+    z) Pulsaremos la tecla "y" y "enter" para confirmar.
+    
+    
     
     
    
