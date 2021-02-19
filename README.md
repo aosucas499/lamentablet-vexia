@@ -62,7 +62,7 @@ Descargamos este repositorio en un sistema linux.
  # Instrucciones de instalación de MININO #TDE en disco
  
  1. Introducimos el usb en la tablet, mejor en la parte izquierda, por OTG y arrancamos la tablet pulsando la teca "ESC" hasta que accede a la Bios. Buscamos la pestaña BOOT y buscamos el arranque "UEFI USB"
-    Sino aparece, pulsamos en UEFI: Built-in EFI shell y seguimos las siguiente indicaciones:
+    Sino aparece, cosa que ocurre con la tablet de cargador negro de 9v, pulsamos en UEFI: Built-in EFI shell y seguimos las siguiente indicaciones:
     
     a) Esperamos que terminen los 5 segundos y en la línea de comandos introducimos fs1: y pulsamos Enter. Para introducir los dos puntos tenemos que usar la tecla Mayúscula Derecha y la tecla ñ, ya que aparece como si fuese un teclado inglés.
     
