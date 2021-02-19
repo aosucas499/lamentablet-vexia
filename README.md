@@ -80,10 +80,13 @@ Primeramente tendremos que preparar el disco y las particiones. Abrimos la aplic
 
     + Partición mmcblk0p1 --- formatear en fat 32 con nombre de etiqueta "EFI" y le asignamos solamente las banderas o flags "boot y "esp". 
     
-    + Borramos todas las particiones restantes, de la 2 a la 13.
+    + Borramos todas las particiones restantes, de la 2 a la 13 en la tablet de cargador negro 9v y de la 2 a la 15 en la tablet de cargador blanco 5v.
     
     + Partición mmcblk0p14 (en tablet cargador negro 9v) ----- formateamos en fat "ext4" con nombre de etiqueta "MININO" y no tocamos banderas/flags
     AVISO: Podemos redimensionar esta partición para aprovechar el tamaño de las particiones borradas, pero nunca borrarla y crearla otra vez ya que el arranque       uefi que genera el kernel de guadalinex busca una partición mmcblk014. 
+    
+    + Partición mmcblk0p16 (en tablet cargador blanco 5v) ----- formateamos en fat "ext4" con nombre de etiqueta "MININO" y no tocamos banderas/flags
+    AVISO: Podemos redimensionar esta partición para aprovechar el tamaño de las particiones borradas, pero nunca borrarla y crearla otra vez ya que el arranque       uefi que genera el kernel de guadalinex busca una partición mmcblk016. 
     
 Posteriormente buscamos la aplicación "instalador de minino" y seleccionamos una instalación desatendida y manual que haga la instalación del sistema a la partición "mmcblk0p14-MININO"
 
