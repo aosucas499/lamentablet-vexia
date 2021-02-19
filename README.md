@@ -145,7 +145,7 @@ Tras instalar minino, el cargador refind no reconoce el grub de minino en esta t
 
         set linux_gfx_mode=text
 
-        linux /boot/vmlinuz-3.16.0-5-686-pae root=UUID=  ro quiet splash  nomodeset
+        linux /boot/vmlinuz-3.16.0-5-686-pae root=/dev/mmcblk0p16  ro quiet splash  nomodeset
 
         initrd /boot/initrd.img-3.16.0-5-686-pae
 
