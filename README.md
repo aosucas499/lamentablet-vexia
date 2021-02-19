@@ -70,7 +70,7 @@ Descargamos este repositorio en un sistema linux.
     
     c) Introducimos en la terminal: cd BOOT y pulsamos la tecla ENTER.
     
-    d)Introducimos en la terminal: bootia32.efi y pulsamos la tecla ENTER.
+    d)Introducimos en la terminal: bootia32.efi (si la tablet tiene el cargador negro de 9v) y pulsamos la tecla ENTER o BOOTx64.efi (si la tablet tiene el cargador blanco de 5v)
     
     e) Pulsamos en la opción "minino live" y arrancará el sistema live.
     
