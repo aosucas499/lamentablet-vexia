@@ -134,6 +134,8 @@ Reinciamos el equipo y entramos en la bios, pulsando la tecla "ESC" hasta que ac
 
 Reiniciamos y entrará en minino que aún no dispone de drivers para la tablet, por lo que en el siguiente paso actualizaremos el kernel usado en guadalinex.
 
++++Excepción en el arranque en la tablet de cargador blanco 5v
+Tras instalar minino el cargador refind no reconoce el grub de minino en esta tablet por lo que ...
 
 ## Instalar kernel de Guadalinex Edu para que funcionen los drivers de wifi, sonido, táctil...
 
