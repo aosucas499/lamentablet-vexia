@@ -134,8 +134,24 @@ Reinciamos el equipo y entramos en la bios, pulsando la tecla "ESC" hasta que ac
 
 Reiniciamos y entrará en minino que aún no dispone de drivers para la tablet, por lo que en el siguiente paso actualizaremos el kernel usado en guadalinex.
 
-+++Excepción en el arranque en la tablet de cargador blanco 5v
-Tras instalar minino el cargador refind no reconoce el grub de minino en esta tablet por lo que ...
+###Excepción en el arranque en la tablet de cargador blanco 5v
+Tras instalar minino, el cargador refind no reconoce el grub de minino en esta tablet por lo que arrancamos con el live de minino y cuando cargue el grub, pulsamos la tecla ESC, a continuación instroducimos los siguiente comandos para que arranque el grub instalado y podamos acceder y cambiar el kernel y el boot uefi en minino:
+
+        set root=(hd1,gpt16)
+    
+        insmod part_gpt
+
+        insmod ext2
+
+        set linux_gfx_mode=text
+
+        linux /boot/vmlinuz-3.16.0.5-686-pae root=UUID=  ro quiet splash  nomodeset
+
+        initrd /boot/initrd.img-3.16.0-5-686-pae
+
+        boot
+
+
 
 ## Instalar kernel de Guadalinex Edu para que funcionen los drivers de wifi, sonido, táctil...
 
