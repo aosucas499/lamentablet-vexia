@@ -39,9 +39,8 @@ sudo apt-get update -y
 #sudo apt-get install -f -y
 sudo apt-get install -y linux-image-3.10.20-generic-pae
 sudo mv /mnt/efi/guadalinex.img /boot/
-sudo mv /mnt/efi/vmlinuz /boot/
 sudo mv /mnt/efi/kernel /boot/
-sudo mv /mnt/efi/Shell.efi /boot/
+
 
 ## Generamo grub
 #
