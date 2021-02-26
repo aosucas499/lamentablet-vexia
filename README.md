@@ -80,13 +80,10 @@ Primeramente tendremos que preparar el disco y las particiones. Abrimos la aplic
 
     + Partición mmcblk0p1 --- formatear en fat 32 con nombre de etiqueta "EFI" y le asignamos solamente las banderas o flags "boot y "esp". 
     
-    + Borramos todas las particiones restantes, de la 2 a la 13 en la tablet de cargador negro 9v y de la 2 a la 15 en la tablet de cargador blanco 5v.
+    + Borramos todas las particiones restantes, de la 2 a la 13 
     
     + Partición mmcblk0p14 (en tablet cargador negro 9v) ----- formateamos en fat "ext4" con nombre de etiqueta "MININO" y no tocamos banderas/flags
     AVISO: Podemos redimensionar esta partición para aprovechar el tamaño de las particiones borradas, pero nunca borrarla y crearla otra vez ya que el arranque       uefi que genera el kernel de guadalinex busca una partición mmcblk014. 
-    
-    + Partición mmcblk0p16 (en tablet cargador blanco 5v) ----- formateamos en fat "ext4" con nombre de etiqueta "MININO" y no tocamos banderas/flags
-    AVISO: Podemos redimensionar esta partición para aprovechar el tamaño de las particiones borradas, pero nunca borrarla y crearla otra vez ya que el arranque       uefi que genera el kernel de guadalinex busca una partición mmcblk016. 
     
 Posteriormente buscamos la aplicación "instalador de minino" y seleccionamos una instalación desatendida y manual que haga la instalación del sistema a la partición "mmcblk0p14-MININO"
 
@@ -134,16 +131,6 @@ Reinciamos el equipo y entramos en la bios, pulsando la tecla "ESC" hasta que ac
 
 Reiniciamos y entrará en minino que aún no dispone de drivers para la tablet, por lo que en el siguiente paso actualizaremos el kernel usado en guadalinex.
 
-### Excepción en el arranque en la tablet de cargador blanco 5v
-Tras instalar minino, el cargador refind no reconoce el grub de minino en esta tablet por lo que arrancamos con el live de minino y cuando cargue el grub, pulsamos la tecla ESC, a continuación instroducimos los siguiente comandos para que arranque el grub instalado y podamos acceder y cambiar el kernel y el boot uefi en minino:
-
-        set root=(hd1,gpt16)
-
-        linux /vmlinuz root=/dev/mmcblk0p16  ro quiet splash  i915.modeset=1
-
-        initrd /initrd.img
-
-        boot
 
 ## Instalar kernel de Guadalinex Edu para que funcionen los drivers de wifi, sonido, táctil...
 
@@ -198,6 +185,84 @@ Los drivers son casi imposibles de compilar o encontrar hoy día, tras muchas pr
 
 El driver táctil no es un driver del kernel, es un driver del XORG gráfico, viene configurado en el kernel pero necesita un paquete que incluye la configuración y el driver en sí, alojado en los repositorios de guadalinex EDU. Si instalas el paquete tal cual, el sistema no arranca, pues ese driver fue compilado para un XORG anterior. Es imposible volver a un XORG anterior en minino, por lo tanto se ha optado por compilar el driver MULTITOUCH para el XORG de minino (también se puede instalar con un apt-get install xserver-xorg-video-multitouch). El único problema es que esta acción hace que el táctil funcione parecido a un touchpad, no aparece el cursor donde pulsas en la pantalla taćtil, tienes que arrastrarlo por la pantalla. El doble click se genera pulsando tres clicks, y el doble click sirve para arrastrar objetos. Tiene más "gestos", algunos de los descubiertos por ahora, arrastrar con dos dedos hacia abajo para navegar por documentos y la web.
 
+## Instrucciones creación USB live: 
+
+Descargamos este repositorio en un sistema linux.
+
+    sudo apt-get update -y
+    
+    sudo apt-get install git -y
+
+    git clone https://github.com/aosucas499/lamentablet-vexia
+
+ 1. Con gparted se debe de crear una partición de 512mb, formateada en fat32 y con las banderas "boot" y "esp"en el usb. (sdX1, siendo la x=b, c, d...)
+
+2. Crear una segunda partición cubriendo el total que quede del usb. Formateada en "ext4" (sdX2, siendo la x= la misma que en paso anterior)
+
+3. Como ya conocemos si el usb es "sdb", sdc", etc...; vamos a una terminal y montamos la primera partición "sdX1" en una carpeta del sistema para poder copiar los archivos de este repositorio en esa partición.
+
+    ```bash
+    mkdir efiusb 
+ 
+    sudo mount -t vfat /dev/sdX1 efiusb (X= b, c, d. Dependiendo de cómo se montó el usb. Usar df o gparted para saberlo)
+    
+    cd lamentablet-vexia/boot/boot-usb-live
+    
+    sudo cp -r * /home/$USER/efiusb
+    
+    sudo umount /dev/sdX1 (X= b, c, d. Dependiendo de cómo se montó el usb. Usar df o gparted para saberlo)
+    
+    cd /home/$USER
+    
+    sudo rm -r efiusb 
+    
+    sudo rm -r lamentablet-vexia
+    
+    
+4. Instalamos una versión Live de linux en el usb, en este caso se ha probado ["minino-tde"](https://github.com/aosucas499/minino-TDE), en la segunda partición, la formateada en "ext4" (sdX2). Tenemos que utilizar unetbootin, ya que deja seleccionar en qué partición se instala y no borraríamos la primera partición de arranque UEFI. No funciona si grabas la ISO con rufus, etcher o cualquier otro. También hay que decir que la primera partición está configurada con un grub que solo funcionaría de esta manera.
+
+    ```bash
+    cd /home/$USER
+    
+    wget https://github.com/unetbootin/unetbootin/releases/download/700/unetbootin-linux64-700.bin
+    
+    chmod +x unetbootin-linux64-700.bin
+    
+    sudo ./unetbootin-linux64-700.bin
+    
+  Al abrirse el programa unetbootin, seleccionamos la distribución live, seleccionando en "disco imagen" y en los tres puntitos ... para seleccionar la .ISO.
+  
+  En el apartado "unidad", seleccionamos la segunda partición, formateada en "ext4" y que anteriormente sería "sdX2". Para terminar pulsamos en "instalar".
+  
+   # Instrucciones de instalación de MININO #TDE en disco
+ 
+ 1. Introducimos el usb en la tablet, mejor en la parte izquierda, por OTG y arrancamos la tablet. Normalmente arranca automáticamente, pues esta tablet si tiene BIOS de 64bits, en caso de que no arranque el usb,  pulsamos la teca "ESC" hasta que accede a la Bios. Buscamos la pestaña BOOT y buscamos el arranque "UEFI USB"
+   
+2. Minino install:
+
+Primeramente tendremos que preparar el disco y las particiones. Abrimos la aplicación Gparted y todas borramos las particiones de la tablet salvo la primera y la última. Vamos a formatearlas y cambiarle alguna etiqueta, de la siguiente manera:
+
+    + Partición mmcblk0p1 --- formatear en fat 32 con nombre de etiqueta "EFI" y le asignamos solamente las banderas o flags "boot y "esp". 
+    
+    + Borramos todas las particiones restantes, de la 2 a la 15
+    
+    + Partición mmcblk0p16 (en tablet cargador blanco 5v) ----- formateamos en fat "ext4" con nombre de etiqueta "MININO" y no tocamos banderas/flags
+    AVISO: Podemos redimensionar esta partición para aprovechar el tamaño de las particiones borradas, pero nunca borrarla y crearla otra vez ya que el arranque       uefi que genera el kernel de guadalinex busca una partición mmcblk016. 
+    
+Posteriormente buscamos la aplicación "instalador de minino" y seleccionamos una instalación desatendida y manual que haga la instalación del sistema a la partición "mmcblk0p16-MININO"
+
+### Excepción en el arranque en la tablet de cargador blanco 5v
+Tras instalar minino, el cargador refind no reconoce el grub de minino en esta tablet por lo que arrancamos con el live de minino y cuando cargue el grub, pulsamos la tecla ESC, a continuación instroducimos los siguientes comandos para que arranque el grub instalado y podamos acceder y cambiar el kernel y el boot uefi en minino:
+
+        set root=(hd1,gpt16)
+
+        linux /vmlinuz root=/dev/mmcblk0p16  ro quiet splash  i915.modeset=1
+
+        initrd /initrd.img
+
+        boot
+
+ 
 ## Instalar otro kernel
 
 Descargarmos el kernel que queramos de aquí en format .gz [https://mirrors.edge.kernel.org/pub/linux/kernel/](https://mirrors.edge.kernel.org/pub/linux/kernel/) y ejecutamos:
