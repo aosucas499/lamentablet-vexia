@@ -186,6 +186,28 @@ Ya solo nos queda crear una imagen con CLONEZILLA como se hizo con guadalinex pa
         
 3. Creamos una copia del disco de la tablet. Necesitaremos un pendrive de más de 32gb que introduciremos en el lateral del teclado y que será el repositorio de imágenes de clonezilla. La imagen local / sources será mmcblk0.
 
+# lamentablet-vexia cargador 5v
+
+## Instalar otro kernel
+
+sudo apt-get install git build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex
+
+cd Descargas
+
+tar zxvf linux*
+
+cd linux*
+
+cp /boot/config-$(uname -r) .config
+
+make oldconfig
+
+make menuconfig
+
+make clean
+
+make -j 4 deb-pkg LOCALVERSION=-dre
+
 
     
     
