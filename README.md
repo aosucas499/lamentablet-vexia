@@ -287,6 +287,8 @@ Descargarmos el kernel que queramos de aquí en format .gz [https://mirrors.edge
     
     cd ..
     
+    sudo dpkg -i linux-libc*
+    
     sudo dpkg -i linux-firmware*
     
     sudo dpkg -i linux-headers*
