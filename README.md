@@ -4,9 +4,9 @@ Primeras investigaciones.
 
 La tablet Vexia solo permite arrancar en modo UEFI, nada de modo Legacy. Para rizar más el rizo, la BIOS es UEFI 32 bits. Necesita archivos especiales para arranque.
 
-Al arrancar en modo uefi,hay que usar el archivo "bootia32.efi" en las tablet de 9v y el archivo BOOTx64.efi en las de 5v, colocados en una carpeta llamada EFI, y dentro de esta otra llamada BOOT.
+Al arrancar en modo uefi,hay que usar el archivo "bootia32.efi" en las tablet de 9v, colocados en una carpeta llamada EFI, y dentro de esta otra llamada BOOT.
 
-Los drivers son casi imposibles de compilar o encontrar hoy día, tras muchas pruebas para encontrar los drivers del wifi, sonido o táctil se opta por usar el kernel que se compiló en su día con las tablets vexia con el sistema Guadalinex Edu. En las tablet de cargador negro de 9v se usó el kernel 3.4.43 y en las de cargador blanco de 5v el 3.10.20.
+Los drivers son casi imposibles de compilar o encontrar hoy día, tras muchas pruebas para encontrar los drivers del wifi, sonido o táctil se opta por usar el kernel que se compiló en su día con las tablets vexia con el sistema Guadalinex Edu. En las tablet de cargador negro de 9v se usó el kernel 3.4.43.
 
 El driver táctil no es un driver del kernel, es un driver del XORG gráfico, viene configurado en el kernel pero necesita un paquete que incluye la configuración y el driver en sí, alojado en los repositorios de guadalinex EDU. Si instalas el paquete tal cual, el sistema no arranca, pues ese driver fue compilado para un XORG anterior. Es imposible volver a un XORG anterior en minino, por lo tanto se ha optado por compilar el driver MULTITOUCH para el XORG de minino (también se puede instalar con un apt-get install xserver-xorg-video-multitouch). El único problema es que esta acción hace que el táctil funcione parecido a un touchpad, no aparece el cursor donde pulsas en la pantalla taćtil, tienes que arrastrarlo por la pantalla. El doble click se genera pulsando tres clicks, y el doble click sirve para arrastrar objetos. Tiene más "gestos", algunos de los descubiertos por ahora, arrastrar con dos dedos hacia abajo para navegar por documentos y la web.
 
@@ -188,25 +188,47 @@ Ya solo nos queda crear una imagen con CLONEZILLA como se hizo con guadalinex pa
 
 # lamentablet-vexia cargador 5v
 
+Primeras investigaciones.
+
+La tablet Vexia solo permite arrancar en modo UEFI, nada de modo Legacy. La BIOS es UEFI 64 bits. 
+
+Al arrancar en modo uefi,hay que usar el archivo BOOTx64.efi en las de 5v, colocados en una carpeta llamada EFI, y dentro de esta otra llamada BOOT. Al tener arranque con 64bits permite arrancar cualquier sistema de hoy día con soporte UEFI a diferencia del modelo de cargador negro de 9v.
+
+Los drivers son casi imposibles de compilar o encontrar hoy día, tras muchas pruebas para encontrar los drivers del wifi, sonido o táctil se opta por usar el kernel que se compiló en su día con las tablets vexia con el sistema Guadalinex Edu. En las tablet de cargador blanco de 5v el 3.10.20. Por ahora es imposible cargar el sistema añadiendo el kernel como se hizo con el otro modelo, por lo que se intenta utilizar otro kernel y añadir los drivers.
+
+El driver táctil no es un driver del kernel, es un driver del XORG gráfico, viene configurado en el kernel pero necesita un paquete que incluye la configuración y el driver en sí, alojado en los repositorios de guadalinex EDU. Si instalas el paquete tal cual, el sistema no arranca, pues ese driver fue compilado para un XORG anterior. Es imposible volver a un XORG anterior en minino, por lo tanto se ha optado por compilar el driver MULTITOUCH para el XORG de minino (también se puede instalar con un apt-get install xserver-xorg-video-multitouch). El único problema es que esta acción hace que el táctil funcione parecido a un touchpad, no aparece el cursor donde pulsas en la pantalla taćtil, tienes que arrastrarlo por la pantalla. El doble click se genera pulsando tres clicks, y el doble click sirve para arrastrar objetos. Tiene más "gestos", algunos de los descubiertos por ahora, arrastrar con dos dedos hacia abajo para navegar por documentos y la web.
+
 ## Instalar otro kernel
 
-sudo apt-get install git build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex
+Descargarmos el kernel que queramos de aquí en format .gz [https://mirrors.edge.kernel.org/pub/linux/kernel/](https://mirrors.edge.kernel.org/pub/linux/kernel/) y ejecutamos:
 
-cd Descargas
+       sudo apt-get install git build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex
 
-tar zxvf linux*
+    cd Descargas
 
-cd linux*
+    tar zxvf linux*
 
-cp /boot/config-$(uname -r) .config
+    cd linux*
 
-make oldconfig
+    cp /boot/config-$(uname -r) .config
 
-make menuconfig
+    make oldconfig
 
-make clean
+    make menuconfig
 
-make -j 4 deb-pkg LOCALVERSION=-dre
+    make clean
+
+    make -j 4 deb-pkg LOCALVERSION=-dre
+    
+    cd ..
+    
+    sudo dpkg -i linux-firmware*
+    
+    sudo dpkg -i linux-headers*
+    
+    sudo dpkg -i linux-image*
+    
+    
 
 
     
