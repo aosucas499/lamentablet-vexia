@@ -268,7 +268,7 @@ Cambiamos el repositorio de jessie por el de buster DEBIAN.
 
     sudo apt-get update -y
     
-    sudo apt-get install i2c-tools hwinfo lshw pciutils usbutils evtest crda pavucontrol -y
+    sudo apt-get install i2c-tools hwinfo lshw pciutils usbutils evtest crda xinput pavucontrol -y
     
     sudo apt-get -y install linux-image-4.9.0-0.bpo.12-686-pae linux-headers-4.9.0-0.bpo.12-686-pae firmware-intel-sound
     
@@ -287,7 +287,7 @@ Cambiamos el repositorio de jessie por el de buster DEBIAN.
     sudo update-grub2
 
  
-## Reconstruir el kernel (solo necesario si necesitamos algun drivero característica)
+## Reconstruir el kernel (solo necesario si necesitamos algun driver o característica)
 
 Descargarmos el kernel que queramos de aquí en format .gz [https://mirrors.edge.kernel.org/pub/linux/kernel/](https://mirrors.edge.kernel.org/pub/linux/kernel/) y ejecutamos:
 
