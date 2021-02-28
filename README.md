@@ -272,7 +272,7 @@ Cambiamos el repositorio de jessie por el de buster DEBIAN.
     
     sudo apt-get -y install linux-image-4.9.0-0.bpo.12-686-pae linux-headers-4.9.0-0.bpo.12-686-pae firmware-intel-sound
     
-    sudo update-grub
+    sudo update-grub2
 
     sudo mv /etc/apt/sources.list /etc/apt/sources.list-jessie
     
@@ -282,7 +282,9 @@ Cambiamos el repositorio de jessie por el de buster DEBIAN.
 
     sudo apt-get update -y
     
-    sudo apt-get install -y linux-image-5.10.0-0.bpo.3-686 firmware-realtek firmware-intel-sound
+    sudo apt-get install -y firmware-realtek firmware-intel-sound linux-image-5.10.0-0.bpo.3-686 
+    
+    sudo update-grub2
 
  
 ## Reconstruir el kernel (solo necesario si necesitamos algun drivero característica)
