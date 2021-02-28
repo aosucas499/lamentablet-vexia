@@ -261,13 +261,31 @@ Tras instalar minino, el cargador refind no reconoce el grub de minino en esta t
         initrd /initrd.img
 
         boot
+        
+## Actualizar kernel compatible con la batería, WIFI, audio...
+
+Cambiamos el repositorio de jessie por el de buster DEBIAN.
+
+    sudo apt-get update -y
+    
+    sudo apt-get install i2c-tools hwinfo lshw pciutils usbutils evtest crda pavucontrol -y
+
+    sudo mv /etc/apt/sources.list /etc/apt/sources.list-jessie
+    
+    sudo echo "deb http://deb.debian.org/debian buster-backports main contrib non-free" > sources.list
+
+    sudo cp sources.list /etc/apt
+
+    sudo apt-get update -y
+    
+    sudo apt-get install -y linux-image-5.10.0-0.bpo.3-686 firmware-realtek firmware-intel-sound
 
  
-## Instalar otro kernel
+## Reconstruir el kernel (solo necesario si necesitamos algun drivero característica)
 
 Descargarmos el kernel que queramos de aquí en format .gz [https://mirrors.edge.kernel.org/pub/linux/kernel/](https://mirrors.edge.kernel.org/pub/linux/kernel/) y ejecutamos:
 
-       sudo apt-get install git build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex
+    sudo apt-get install git build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex
 
     cd Descargas
 
@@ -279,7 +297,7 @@ Descargarmos el kernel que queramos de aquí en format .gz [https://mirrors.edge
 
     make oldconfig
 
-    make menuconfig
+    make menuconfig (elegir las opciones o módulos nuevos a incluir)
 
     make clean
 
