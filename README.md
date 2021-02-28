@@ -269,6 +269,10 @@ Cambiamos el repositorio de jessie por el de buster DEBIAN.
     sudo apt-get update -y
     
     sudo apt-get install i2c-tools hwinfo lshw pciutils usbutils evtest crda pavucontrol -y
+    
+    sudo apt-get -y install linux-image-4.9.0-0.bpo.12-686-pae linux-headers-4.9.0-0.bpo.12-686-pae firmware-intel-sound
+    
+    sudo update-grub
 
     sudo mv /etc/apt/sources.list /etc/apt/sources.list-jessie
     
