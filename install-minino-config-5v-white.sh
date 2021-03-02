@@ -66,6 +66,8 @@ sudo mv /mnt/efi/kernel /boot/
 #
 sudo cp boot/linux-5v/vmlinuz-3.10.20_edu /boot
 sudo update-initramfs -c -k 3.10.20_edu
+sudo mv /boot/vmlinuz-3.10.20_edu /boot/vmlinuz-3.10.20-dre
+sudo mv /boot/initrd.img-3.10.20_edu /boot/initrd.img-3.10.20-dre
 
 ## Generamo grub
 #
