@@ -65,7 +65,7 @@ sudo mv /mnt/efi/kernel /boot/
 ## Generamos arranque para 5v diferente al de fábrica
 #
 sudo cp boot/linux-5v/vmlinuz-3.10.20_edu /boot
-sudo update-initramfs -d -k 3.10.20_edu
+sudo update-initramfs -c -k 3.10.20_edu
 
 ## Generamo grub
 #
