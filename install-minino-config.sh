@@ -74,11 +74,11 @@ sudo update-grub2
 
 #Borramos imagen linux grub-pc
 #
-sudo rm /boot/initrd*
-sudo rm /boot/Sys*
-sudo rm /boot/vmlinuz*
-sudo rm /boot/confi*
-sudo rm -r /mnt/efi
+#sudo rm /boot/initrd*
+#sudo rm /boot/Sys*
+#sudo rm /boot/vmlinuz*
+#sudo rm /boot/confi*
+#sudo rm -r /mnt/efi
 
 #Deshabilitamos la ganancia del sonido de guadalinex que en minino suena horrible
 #
