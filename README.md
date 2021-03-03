@@ -280,6 +280,22 @@ Arrancamos el USB en modo live y cuando accedamos al sistema, conectamos abrimos
     chmod +x install-minino-config-5v-white.sh
     
     ./install-minino-config-5v-white.sh 
+    
+ Módulo wifi
+ 
+    git clone https://github.com/314942468GitHub/rtl8723bs
+    
+    cd rtl8723bs
+    
+    sudo apt-get install autoconf make automake gcc -y
+    
+    sudo make
+    
+    sudo make install
+    
+    sudo modprobe r8723bs
+    
+    
 
 ## Actualizar kernel 4.9 (para investigar, es posible desarrolar el módulo del wifi)
 
@@ -345,7 +361,7 @@ Descargarmos el kernel que queramos de aquí en format .gz [https://mirrors.edge
     sudo dpkg -i linux-image*
     
     
-
+ 
 
     
     
