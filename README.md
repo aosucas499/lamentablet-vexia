@@ -262,6 +262,18 @@ Tras instalar minino, el cargador refind no reconoce el grub de minino en esta t
 
         boot
         
+### Instalar gestor de arranque compatible con la tablet de cargador blanco 5v
+
+En el punto anterior hemos apuntado como arrancar ya que esta tablet posee solamente arranque uefi de 64 bits y no detecta de primeras el sistema MININO de 32 bits, por lo tanto, para hacerlo permanente arrancaremos un sistema de 64 bits y actualizaremos el arranque en modo uefi (cosa que minino versión TDE 32 bits no puede hacer).
+        
+Podemos utilizar el usb que construimos anteriormente en el punto  "Instrucciones creación USB live", pero en el punto 4, usando unetbootin, en lugar de instalar MININO TDE, instalaremos en la segunda partición, MININO 64bits, el enlace está [aquí](https://minino.galpon.org/ISO/minino-queiles-64.iso).
+Por supuesto también valdría, cualquier distribución actual como Ubuntu, Linux Mint...pero su versión de 64bits, cosa que no necesitaría de hacer uso de las instrucciones del punto "Instrucciones creación USB live", simplemente, grabar en un USB con la herramienta "etcher".
+
+Arrancamos el USB en modo live y cuando accedamos al sistema, abrimos una terminal e introducimos los siguientes comandos:
+
+    
+
+
 ## Actualizar kernel compatible con la batería, WIFI, audio...
 
 Cambiamos el repositorio de jessie por el de buster DEBIAN.
