@@ -87,7 +87,7 @@ Primeramente tendremos que preparar el disco y las particiones. Abrimos la aplic
     
 Posteriormente buscamos la aplicación "instalador de minino" y seleccionamos una instalación desatendida y manual que haga la instalación del sistema a la partición "mmcblk0p14-MININO"
 
-3. Instalamos el cargador de arranque UEFI REfind que nos facilitará la vida. Si podemos tener internet con un cable usb y el teléfono móvil creando un punto de acceso ejecutaremos la primera línea, en caso contrario tendremos que descargar este repositorio en un pendrive y posteriormente agregarlo a la tablet por usb en la carpeta usuario  y empezaremos en la segunda línea.
+3. Instalamos el cargador de arranque UEFI REfind que nos facilitará la vida. Si podemos tener internet con un cable usb y el teléfono móvil creando un punto de acceso, ejecutaremos la primera línea, en caso contrario tendremos que descargar este repositorio en un pendrive y posteriormente agregarlo a la tablet por usb en la carpeta usuario  y empezaremos en la segunda línea.
     
      ```bash
      
@@ -269,14 +269,19 @@ En el punto anterior hemos apuntado como arrancar ya que esta tablet posee solam
 Podemos utilizar el usb que construimos anteriormente en el punto  "Instrucciones creación USB live", pero en el punto 4, usando unetbootin, en lugar de instalar MININO TDE, instalaremos en la segunda partición, MININO 64bits, el enlace está [aquí](https://minino.galpon.org/ISO/minino-queiles-64.iso).
 Por supuesto también valdría, cualquier distribución actual como Ubuntu, Linux Mint...pero su versión de 64bits, cosa que no necesitaría de hacer uso de las instrucciones del punto "Instrucciones creación USB live", simplemente, grabar en un USB con la herramienta "etcher".
 
-Arrancamos el USB en modo live y cuando accedamos al sistema, abrimos una terminal e introducimos los siguientes comandos:
+Arrancamos el USB en modo live y cuando accedamos al sistema, conectamos abrimos una terminal e introducimos los siguientes comandos:
 
+## Actualizar kernel 3.10.20_edu de Guadalinex (debería de funcionar todo, pero los módulos iban firmados al generar el kernel y da fallo al cargar el módulo de wifi y cámara.) 
+
+    git clone https://github.com/aosucas499/lamentablet-vexia
+       
+    cd lamentablet-vexia
     
+    chmod +x install-minino-config-5v-white.sh
+    
+    ./install-minino-config-5v-white.sh 
 
-
-## Actualizar kernel compatible con la batería, WIFI, audio...
-
-Cambiamos el repositorio de jessie por el de buster DEBIAN.
+## Actualizar kernel 4.9 (para investigar, es posible desarrolar el módulo del wifi)
 
     sudo apt-get update -y
     
@@ -285,6 +290,14 @@ Cambiamos el repositorio de jessie por el de buster DEBIAN.
     sudo apt-get -y install linux-image-4.9.0-0.bpo.12-686-pae linux-headers-4.9.0-0.bpo.12-686-pae firmware-intel-sound
     
     sudo update-grub2
+    
+## Actualizar kernel 5.10 (compatible con batería, wifi y driver de sonido, aunque no suena)
+
+Cambiamos el repositorio de jessie por el de buster DEBIAN.
+
+    sudo apt-get update -y
+    
+    sudo apt-get install i2c-tools hwinfo lshw pciutils usbutils evtest crda xinput pavucontrol -y
 
     sudo mv /etc/apt/sources.list /etc/apt/sources.list-jessie
     
