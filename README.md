@@ -328,7 +328,7 @@ Cambiamos el repositorio de jessie por el de buster DEBIAN.
     sudo update-grub2
 
  
-## Reconstruir el kernel (solo necesario si necesitamos algun driver o característica)
+## Reconstruir el kernel (por ahora la única solución posible para obtener todos los módulos funcionando, generar un kernel que arranque y tenga activados todos los módulos)
 
 Descargarmos el kernel que queramos de aquí en format .gz [https://mirrors.edge.kernel.org/pub/linux/kernel/](https://mirrors.edge.kernel.org/pub/linux/kernel/) y ejecutamos:
 
