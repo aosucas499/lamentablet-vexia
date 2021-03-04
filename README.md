@@ -319,13 +319,19 @@ Cambiamos el repositorio de jessie por el de buster DEBIAN.
     
     sudo echo "deb http://deb.debian.org/debian buster-backports main contrib non-free" > sources.list
 
-    sudo cp sources.list /etc/apt
+    sudo cp sources.list /etc/apt/
 
     sudo apt-get update -y
     
     sudo apt-get install -y firmware-realtek firmware-intel-sound linux-image-5.10.0-0.bpo.3-686 
     
     sudo update-grub2
+    
+    sudo mv /etc/apt/sources.list /etc/apt/sources.list-buster
+    
+    sudo mv /etc/apt/sources.list-jessie /etc/apt/sources.list
+
+    sudo apt-get update -y
 
  
 ## Reconstruir el kernel (por ahora la única solución posible para obtener todos los módulos funcionando, generar un kernel que arranque y tenga activados todos los módulos)
