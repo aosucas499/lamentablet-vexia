@@ -292,7 +292,7 @@ Arrancamos el USB en modo live y cuando accedamos al sistema, conectamos abrimos
     
     sudo update-grub2
     
- * Módulo wifi
+ *Módulo wifi
  
     git clone https://github.com/314942468GitHub/rtl8723bs
     
