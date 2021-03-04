@@ -343,11 +343,19 @@ Cambiamos el repositorio de jessie por el de buster DEBIAN.
     
  *Arreglo del sonido supuestamente
 
+    cd /home/$USER
+    
     echo "blacklist snd_hdmi_lpe_audio" > blacklist_snd_hdmi_lpe_audio.conf
     
     sudo mv blacklist_snd_hdmi_lpe_audio.conf /etc/modprobe.d
+    
+    git clone https://github.com/plbossart/UCM
+    
+    sudo cp -rf bytcr-rt5640 /usr/share/alsa/ucm
+    
+    sudo reboot
+    
    
- 
 ## Reconstruir el kernel (por ahora la única solución posible para obtener todos los módulos funcionando, generar un kernel que arranque y tenga activados todos los módulos)
 
 Descargarmos el kernel que queramos de aquí en format .gz [https://mirrors.edge.kernel.org/pub/linux/kernel/](https://mirrors.edge.kernel.org/pub/linux/kernel/) y ejecutamos:
