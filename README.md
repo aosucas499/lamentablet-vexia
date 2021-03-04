@@ -340,7 +340,13 @@ Cambiamos el repositorio de jessie por el de buster DEBIAN.
     sudo mv /etc/apt/sources.list-jessie /etc/apt/sources.list
 
     sudo apt-get update -y
+    
+ *Arreglo del sonido supuestamente
 
+    echo "blacklist snd_hdmi_lpe_audio" > blacklist_snd_hdmi_lpe_audio.conf
+    
+    sudo mv blacklist_snd_hdmi_lpe_audio.conf /etc/modprobe.d
+   
  
 ## Reconstruir el kernel (por ahora la única solución posible para obtener todos los módulos funcionando, generar un kernel que arranque y tenga activados todos los módulos)
 
