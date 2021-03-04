@@ -269,7 +269,50 @@ En el punto anterior hemos apuntado como arrancar ya que esta tablet posee solam
 Podemos utilizar el usb que construimos anteriormente en el punto  "Instrucciones creación USB live", pero en el punto 4, usando unetbootin, en lugar de instalar MININO TDE, instalaremos en la segunda partición, MININO 64bits, el enlace está [aquí](https://minino.galpon.org/ISO/minino-queiles-64.iso).
 Por supuesto también valdría, cualquier distribución actual como Ubuntu, Linux Mint...pero su versión de 64bits, cosa que no necesitaría de hacer uso de las instrucciones del punto "Instrucciones creación USB live", simplemente, grabar en un USB con la herramienta "etcher".
 
-Arrancamos el USB en modo live y cuando accedamos al sistema, conectamos abrimos una terminal e introducimos los siguientes comandos:
+Arrancamos el USB en modo live y cuando accedamos al sistema, (conectamos el teléfono móvil, creando un puto de acceso por usb si el sistema no detecta la wifi) y abrimos una terminal e introducimos los siguientes comandos:
+
+    apt-get update
+    
+    sudo mount --bind /dev /media/minino/MININO/dev
+    
+    sudo mount --bind /proc /media/minino/MININO/proc
+    
+    sudo mount --bind /sys /media/minino/MININO/sys
+    
+    sudo chroot /media/minino/MININO
+    
+    nano /etc/resolv.conf
+    
+    (cambiamos la dirección IP por 8.8.8.8, y guardamos pulsando Ctrl y la tecla o, para salir Ctrl y la tecla x)
+    
+    mount /dev/mmcblk0p1 /boot/efi
+    
+    rm -r /boot/efi/*
+    
+    apt-get update -y
+
+    apt-get install grub-efi-amd64 -y
+    
+    mount -t efivarfs efivarfs /sys/firmware/efi/efivars
+    
+    grub-install /dev/mmcblk0p1
+    
+    update-grub
+    
+    update-grub2
+    
+    exit
+    
+    sudo umount /media/minino/MININO/dev
+    
+    sudo umount /media/minino/MININO/proc
+    
+    sudo umount /media/minino/MININO/sys
+    
+    sudo umount /media/minino/MININO/
+    
+    sudo reboot
+
 
 ## Actualizar kernel 3.10.20_edu de Guadalinex (debería de funcionar todo, pero los módulos iban firmados al generar el kernel y da fallo al cargar el módulo de wifi y cámara.) 
 
