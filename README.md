@@ -312,7 +312,7 @@ Arrancamos el USB en modo live y cuando accedamos al sistema, conectamos abrimos
     
     cd /home/$USER/
     
-    sudo rm -r r8723bs
+    sudo rm -r rtl8723bs
     
     
 ## Actualizar kernel 5.10 (compatible con batería, wifi y driver de sonido, aunque no suena)
