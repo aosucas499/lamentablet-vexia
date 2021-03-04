@@ -280,8 +280,19 @@ Arrancamos el USB en modo live y cuando accedamos al sistema, conectamos abrimos
     chmod +x install-minino-config-5v-white.sh
     
     ./install-minino-config-5v-white.sh 
+   
+
+## Actualizar kernel 4.9 (para investigar, es posible desarrolar el módulo del wifi)
+
+    sudo apt-get update -y
     
- Módulo wifi
+    sudo apt-get install i2c-tools hwinfo lshw pciutils usbutils evtest crda xinput pavucontrol -y
+    
+    sudo apt-get -y install linux-image-4.9.0-0.bpo.12-686-pae linux-headers-4.9.0-0.bpo.12-686-pae firmware-intel-sound
+    
+    sudo update-grub2
+    
+ * Módulo wifi
  
     git clone https://github.com/314942468GitHub/rtl8723bs
     
@@ -296,16 +307,6 @@ Arrancamos el USB en modo live y cuando accedamos al sistema, conectamos abrimos
     sudo modprobe r8723bs
     
     
-
-## Actualizar kernel 4.9 (para investigar, es posible desarrolar el módulo del wifi)
-
-    sudo apt-get update -y
-    
-    sudo apt-get install i2c-tools hwinfo lshw pciutils usbutils evtest crda xinput pavucontrol -y
-    
-    sudo apt-get -y install linux-image-4.9.0-0.bpo.12-686-pae linux-headers-4.9.0-0.bpo.12-686-pae firmware-intel-sound
-    
-    sudo update-grub2
     
 ## Actualizar kernel 5.10 (compatible con batería, wifi y driver de sonido, aunque no suena)
 
