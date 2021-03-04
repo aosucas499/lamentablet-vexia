@@ -331,7 +331,7 @@ Cambiamos el repositorio de jessie por el de buster DEBIAN.
 
     sudo apt-get update -y
     
-    sudo apt-get install -y firmware-realtek firmware-intel-sound linux-image-5.10.0-0.bpo.3-686 
+    sudo apt-get install -y firmware-linux firmware-realtek firmware-intel-sound linux-image-5.10.0-0.bpo.3-686 
     
     sudo update-grub2
     
