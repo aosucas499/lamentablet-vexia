@@ -327,7 +327,7 @@ Cambiamos el repositorio de jessie por el de buster DEBIAN.
     
     sudo echo "deb http://deb.debian.org/debian buster-backports main contrib non-free" > sources.list
 
-    sudo cp sources.list /etc/apt/
+    sudo mv sources.list /etc/apt/
 
     sudo apt-get update -y
     
