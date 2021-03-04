@@ -351,7 +351,13 @@ Cambiamos el repositorio de jessie por el de buster DEBIAN.
     
     git clone https://github.com/plbossart/UCM
     
+    cd UCM
+    
     sudo cp -rf bytcr-rt5640 /usr/share/alsa/ucm
+    
+    cd ..
+    
+    sudo rm -r UCM
     
     sudo reboot
     
