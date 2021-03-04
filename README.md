@@ -280,6 +280,8 @@ Arrancamos el USB en modo live y cuando accedamos al sistema, conectamos abrimos
     chmod +x install-minino-config-5v-white.sh
     
     ./install-minino-config-5v-white.sh 
+    
+    sudo reboot
    
 
 ## Actualizar kernel 4.9 (para investigar, es posible desarrolar el módulo del wifi)
@@ -292,7 +294,9 @@ Arrancamos el USB en modo live y cuando accedamos al sistema, conectamos abrimos
     
     sudo update-grub2
     
- *Módulo wifi
+    sudo reboot
+    
+ *Módulo wifi (si acabamos de hacer los pasos anteriores, reiniciamos y accedemos a el kernel 4.9)
  
     git clone https://github.com/314942468GitHub/rtl8723bs
     
