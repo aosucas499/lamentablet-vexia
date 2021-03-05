@@ -7,7 +7,7 @@
 
 [WIKI: ](https://github.com/aosucas499/lamentablet-vexia/wiki)para explicar el proceso y posible ayuda o dudas:
 
-El sistema instalado es [MININO #TDE](https://github.com/aosucas499/minino-TDE), que trae el cliente de la aplicación HGR, antiguamente llamada Sigala. De esta manera puede usarse en las tablet y ultraportátiles por los alumnos/as y en el sistema del profesor/a, instalar el servidor con este [docker/aplicación](https://github.com/aosucas499/hgr-dre)
+El sistema instalado es [MININO #TDE](https://github.com/aosucas499/minino-TDE), que trae el cliente de la aplicación HGR, antiguamente llamada Sigala. De esta manera puede usarse en las tablet/ultraportátiles por los alumnos/as y en el sistema del profesor/a, instalar el servidor con este [docker/aplicación](https://github.com/aosucas499/hgr-dre)
 
 
 # lamentablet-vexia cargador 9v
