@@ -133,6 +133,7 @@ cd /home/$USER
 sudo rm -r lamentablet*
 sudo rm -r multitouch
 sudo rm -r mtdev*
+sudo rm guadalinex*.deb
 
 
 
