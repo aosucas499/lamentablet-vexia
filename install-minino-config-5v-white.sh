@@ -8,21 +8,21 @@ sudo apt-get install pavucontrol -y
 sudo apt-get install crda -y
 
 # Remover paquetes de firmware incompatibles con la instalación del firmare de la tablet o kernel
-#cd /home/$USER
-#sudo apt-get purge --remove atmel-firmware -y
-#sudo apt-get purge --remove firmware-libertas -y
-#sudo apt-get purge --remove firmware-misc-nonfree -y
-#sudo apt-get purge --remove firmware-myricom -y
-#sudo apt-get purge --remove firmware-iwlwifi -y
-#sudo apt-get purge --remove firmware-atheros -y
-#sudo apt-get purge --remove firmware-ipw2x00 -y
-#sudo apt-get purge --remove firmware-linux-free -y
-#sudo apt-get purge --remove firmware-realtek -y
-#sudo apt-get purge --remove firmware-intelwimax -y
-#sudo apt-get purge --remove firmware-brcm80211 -y
-#sudo apt-get purge --remove firmware-netxen -y
-#sudo apt-get purge --remove firmware-bnx2x -y
-#sudo apt-get purge --remove firmware-amd-graphics -y
+cd /home/$USER
+sudo apt-get purge --remove atmel-firmware -y
+sudo apt-get purge --remove firmware-libertas -y
+sudo apt-get purge --remove firmware-misc-nonfree -y
+sudo apt-get purge --remove firmware-myricom -y
+sudo apt-get purge --remove firmware-iwlwifi -y
+sudo apt-get purge --remove firmware-atheros -y
+sudo apt-get purge --remove firmware-ipw2x00 -y
+sudo apt-get purge --remove firmware-linux-free -y
+sudo apt-get purge --remove firmware-realtek -y
+sudo apt-get purge --remove firmware-intelwimax -y
+sudo apt-get purge --remove firmware-brcm80211 -y
+sudo apt-get purge --remove firmware-netxen -y
+sudo apt-get purge --remove firmware-bnx2x -y
+sudo apt-get purge --remove firmware-amd-graphics -y
 
 # Descargamos ambos kernels de las tablet vexia
 #
@@ -57,7 +57,7 @@ sudo apt-get update -y
 #sudo mount -av
 #sudo apt-get update -y
 #sudo apt-get install -f -y
-#sudo apt-get install -y linux-firmware
+sudo apt-get install -y linux-firmware
 sudo apt-get install -y linux-image-3.10.20-generic-pae
 sudo mv /mnt/efi/guadalinex.img /boot/
 sudo mv /mnt/efi/kernel /boot/
