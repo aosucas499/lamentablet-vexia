@@ -42,7 +42,7 @@ sudo echo "deb http://centros.edu.guadalinex.org/Edu/precisedda precise main" >>
 sudo echo "deb http://centros.edu.guadalinex.org/Edu/catcornerdda2 guadalinexedu main" >> sources.list
 sudo echo "deb http://centros.edu.guadalinex.org/Edu/catcornerdda guadalinexedu main" >> sources.list
 sudo echo "deb http://centros.edu.guadalinex.org/Edu/catcornersc guadalinexedu main" >> sources.list
-sudo cp sources.list /etc/apt
+sudo mv sources.list /etc/apt
 sudo apt-get update -y
 
 ## El kernel 3.4.43 es para la tablet con cargador negro a 9V
@@ -133,8 +133,8 @@ sudo cp multitouch/modules/usr/lib/xorg/modules/input/multitouch_drv-jessie.so /
 # Borramos repos lamentablet y multitouch
 cd /home/$USER
 sudo rm -r lamentablet*
-sudo rm -r multitouch
-sudo rm -r mtdev*
+#sudo rm -r multitouch
+#sudo rm -r mtdev*
 sudo rm guadalinex*.deb
 
 
