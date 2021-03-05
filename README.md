@@ -1,4 +1,4 @@
-### Enlace archivo de instalación ambas tablets: 
+### Enlace al archivo de instalación para ambas tablets: 
 
 [Instrucciones de instalación](http://www.juntadeandalucia.es/educacion/cga/portal/wp-content/uploads/2016/01/Instrucciones_actualizaci%C3%B3n_dda.pdf): las mismas de siempre pero el nombre del fichero a descargar y descomprimir en el USB es diferente.
 
