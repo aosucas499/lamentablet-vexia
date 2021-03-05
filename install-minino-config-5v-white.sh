@@ -64,6 +64,7 @@ sudo mv /mnt/efi/kernel /boot/
 
 ## Generamos arranque para 5v diferente al de fábrica
 #
+cd /home/$USER/lamentablet-vexia
 sudo cp boot/linux-5v/vmlinuz-3.10.20_edu /boot
 sudo update-initramfs -c -k 3.10.20_edu
 
@@ -108,6 +109,7 @@ sudo mv /etc/apt/sources.list.save /etc/apt/sources.list
 sudo apt-get update -y
 
 #copiamos driver multitouch para minino
+cd /home/$USER/lamentablet-vexia
 sudo cp multitouch/modules/usr/lib/xorg/modules/input/multitouch_drv-jessie.so /usr/lib/xorg/modules/input/multitouch_drv.so
 
 #Compilamos driver multitouch compatible xorg gráfico minino TDE
