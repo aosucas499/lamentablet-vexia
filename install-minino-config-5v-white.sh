@@ -108,33 +108,39 @@ sudo apt-get install xserver-xorg-input-multitouchdda -y
 sudo mv /etc/apt/sources.list.save /etc/apt/sources.list
 sudo apt-get update -y
 
-#copiamos driver multitouch para minino
+#copiamos driver multitouch para minino y borramos el de guadalinex que provoca falloo en el xorg de minino
 cd /home/$USER/lamentablet-vexia
 sudo cp multitouch/modules/usr/lib/xorg/modules/input/multitouch_drv-jessie.so /usr/lib/xorg/modules/input/multitouch_drv.so
 
 #Compilamos driver multitouch compatible xorg gráfico minino TDE
 #
-#sudo apt-get install xserver-xorg-dev xorg-dev autoconf automake gcc -y
-#cd ..
-#git clone http://bitmath.org/git/multitouch.git
-#wget http://bitmath.org/code/mtdev/mtdev-1.1.6.tar.gz
-#tar -xzvf mtdev-1.1.6.tar.gz
-#rm mtdev-1.1.6.tar.gz
-#cd mtdev*
-#sudo ./configure
-#sudo make
-#sudo make install
-#cd ../multi*
-#sudo make
-#sudo make install
-#cd /home/$USER
-#sudo rm /usr/lib/xorg/modules/input/multitouch_drv.so
+sudo apt-get install xserver-xorg-dev xorg-dev autoconf automake gcc -y
+cd ..
+git clone http://bitmath.org/git/multitouch.git
+wget http://bitmath.org/code/mtdev/mtdev-1.1.6.tar.gz
+tar -xzvf mtdev-1.1.6.tar.gz
+rm mtdev-1.1.6.tar.gz
+cd mtdev*
+sudo ./configure
+sudo make
+sudo make install
+cd ../multi*
+sudo make
+sudo make install
+cd /home/$USER
+
+#Borramos el multitouch de minino si compilamos en el paso anterior 
+#
+sudo rm /usr/lib/xorg/modules/input/multitouch_drv.so
+
+#Borramos configuración tarjeta gráfica de intel que introdujo el paquete multitouch de guadalinex
+sudo rm /usr/share/X11/xorg.conf.d/5-intel_drv.conf
 
 # Borramos repos lamentablet y multitouch
 cd /home/$USER
 sudo rm -r lamentablet*
-#sudo rm -r multitouch
-#sudo rm -r mtdev*
+sudo rm -r multitouch
+sudo rm -r mtdev*
 sudo rm guadalinex*.deb
 
 
