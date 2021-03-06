@@ -78,7 +78,7 @@ Indicador Batería: OK
 
 Audio: NO
  
-Táctil: NO
+Táctil: OK
  
 Cámara WEB: NO
  
