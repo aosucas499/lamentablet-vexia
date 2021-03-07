@@ -3,9 +3,7 @@
 ### Enlace al archivo de instalación para ambas tablets: 
 
 
-[Instrucciones de instalación](http://www.juntadeandalucia.es/educacion/cga/portal/wp-content/uploads/2016/01/Instrucciones_actualizaci%C3%B3n_dda.pdf): 
-
-las mismas de siempre pero el nombre del fichero a descargar y descomprimir en el USB es diferente.
+[Instrucciones de instalación](http://www.juntadeandalucia.es/educacion/cga/portal/wp-content/uploads/2016/01/Instrucciones_actualizaci%C3%B3n_dda.pdf): el nombre del fichero a descargar y descomprimir en el USB es diferente.
 
 [WIKI: ](https://github.com/aosucas499/lamentablet-vexia/wiki)explica el proceso para solventar dudas o investigación 
 
