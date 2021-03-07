@@ -3,9 +3,13 @@
 ![vexias](https://user-images.githubusercontent.com/72696244/110154393-7e4e2c80-7de4-11eb-9d78-1116d448a7f9.png)
 
 
-[Instrucciones de instalación](http://www.juntadeandalucia.es/educacion/cga/portal/wp-content/uploads/2016/01/Instrucciones_actualizaci%C3%B3n_dda.pdf): las mismas de siempre pero el nombre del fichero a descargar y descomprimir en el USB es diferente.
+[Instrucciones de instalación](http://www.juntadeandalucia.es/educacion/cga/portal/wp-content/uploads/2016/01/Instrucciones_actualizaci%C3%B3n_dda.pdf): 
 
-[WIKI: ](https://github.com/aosucas499/lamentablet-vexia/wiki)para explicar el proceso y posible ayuda o dudas:
+las mismas de siempre pero el nombre del fichero a descargar y descomprimir en el USB es diferente.
+
+[WIKI: ](https://github.com/aosucas499/lamentablet-vexia/wiki)
+
+para explicar el proceso y posible ayuda o dudas.
 
 El sistema instalado es [MININO #TDE](https://github.com/aosucas499/minino-TDE), que trae el cliente de la aplicación HGR, antiguamente llamada Sigala. De esta manera puede usarse en las tablet/ultraportátiles por los alumnos/as y en el sistema del profesor/a, instalar el servidor con este [docker/aplicación](https://github.com/aosucas499/hgr-dre)
 
