@@ -12,6 +12,8 @@ El sistema instalado es [MININO #TDE](https://github.com/aosucas499/minino-TDE),
 
 # lamentablet-vexia cargador 9v
 
+![9v](https://github.com/aosucas499/lamentablet-vexia/raw/main/guadalinex/vexia-9v.png)
+
 ## Estado actual: usable
 WIFI: OK
 
@@ -38,6 +40,8 @@ El driver táctil no es un driver del kernel, es un driver del XORG gráfico, vi
 
  
 # lamentablet-vexia cargador 5v
+
+![5v](https://github.com/aosucas499/lamentablet-vexia/raw/main/guadalinex/vexia-5v.png)
 
 ## Estado actual: usable con carencias
 
