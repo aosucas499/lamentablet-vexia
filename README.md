@@ -90,7 +90,7 @@ La tablet Vexia, de cargador blanco de 5V, utilizada en los colegios de Andaluc�
 
 Al arrancar en modo uefi,hay que usar el archivo BOOTx64.efi, colocados en una carpeta llamada EFI, y dentro de esta otra llamada BOOT. Al tener arranque con 64bits permite arrancar cualquier sistema de hoy día con soporte UEFI a diferencia del modelo de cargador negro de 9v.
 
-Los drivers son casi imposibles de compilar o encontrar hoy día, tras muchas pruebas para encontrar los drivers del wifi, sonido o táctil se opta por usar el kernel que se compiló en su día con las tablets vexia con el sistema Guadalinex Edu. En las tablet de cargador blanco de 5v el 3.10.20. Por ahora es imposible cargar el sistema añadiendo el kernel como se hizo con el otro modelo, por lo que se intenta utilizar otro kernel y añadir los drivers.
+Los drivers son casi imposibles de compilar o encontrar hoy día, tras muchas pruebas para encontrar los drivers del wifi, sonido o táctil se opta por usar el kernel actual de DEBIAN que al menos nos permite navegar usando el WIFI, se supone que instala el sonido y tenemos información de la batería. El sistema trae varios kernels (indicados arriba) para posible mejora e investigación, incluido el usado en guadalinex, pero con el problema de la firma que no carga los controladores.
 
 
 
