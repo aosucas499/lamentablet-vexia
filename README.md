@@ -1,7 +1,6 @@
 ![vexias](https://user-images.githubusercontent.com/72696244/110154393-7e4e2c80-7de4-11eb-9d78-1116d448a7f9.png)
 
-### Enlace al archivo de instalación para ambas tablets:  
-Solventando un pequeño fallo en el arranque de las tablets de cargador blanco/5V, esperen unas horas...
+### Enlace al archivo de instalación para ambas tablets: [https://github.com/aosucas499/lamentablet-vexia](https://github.com/aosucas499/lamentablet-vexia)
 
 
 [Instrucciones de instalación](https://github.com/aosucas499/lamentablet-vexia/wiki/0.-Instrucciones-de-instalaci%C3%B3n-MININO-%23TDE-en-tablets-VEXIA)
