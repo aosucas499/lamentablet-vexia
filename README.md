@@ -4,7 +4,7 @@
 Solventando un pequeño fallo, esperen unas horas...
 
 
-[Instrucciones de instalación](http://www.juntadeandalucia.es/educacion/cga/portal/wp-content/uploads/2016/01/Instrucciones_actualizaci%C3%B3n_dda.pdf): el nombre del fichero a descargar y descomprimir en el USB es diferente.
+[Instrucciones de instalación](https://github.com/aosucas499/lamentablet-vexia/wiki/0.-Instrucciones-de-instalaci%C3%B3n-MININO-%23TDE-en-tablets-VEXIA)
 
 [WIKI: ](https://github.com/aosucas499/lamentablet-vexia/wiki)explica el proceso de desarrollo. No es necesario para instalar el sistema en las tablets, solo para desarrollo o investigación.
 
