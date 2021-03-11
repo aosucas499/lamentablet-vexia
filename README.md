@@ -1,7 +1,8 @@
 ![vexias](https://user-images.githubusercontent.com/72696244/110154393-7e4e2c80-7de4-11eb-9d78-1116d448a7f9.png)
 
-### Enlace al archivo de instalación para ambas tablets: [http://bit.ly/2OhHfLz](http://bit.ly/2OhHfLz)
-
+## Enlace de la última imagen: [http://bit.ly/2OhHfLz](http://bit.ly/2OhHfLz)
+(enlace permanente aunque se actualice la ISO)
+Fecha subida: 8 marzo 2021
 
 [Instrucciones de instalación](https://github.com/aosucas499/lamentablet-vexia/wiki/0.-Instrucciones-de-instalaci%C3%B3n-MININO-%23TDE-en-tablets-VEXIA)
 
