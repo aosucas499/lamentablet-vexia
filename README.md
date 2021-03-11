@@ -2,7 +2,8 @@
 
 ## Enlace de la última imagen: [http://bit.ly/2OhHfLz](http://bit.ly/2OhHfLz)
 (enlace permanente aunque se actualice la ISO)
-Fecha subida: 8 marzo 2021
+
+***Fecha subida: 8 marzo 2021***
 
 [Instrucciones de instalación](https://github.com/aosucas499/lamentablet-vexia/wiki/0.-Instrucciones-de-instalaci%C3%B3n-MININO-%23TDE-en-tablets-VEXIA)
 
