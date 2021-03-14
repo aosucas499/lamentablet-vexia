@@ -128,6 +128,11 @@ sudo make install
 cd /home/$USER
 sudo rm /usr/lib/xorg/modules/input/multitouch_drv.so
 
+#añadimos aplicación control brillo
+cd /home/$USER/lamentablet-vexia
+sudo dpkg -i guadalinex/cga-brillo/*
+sudo apt-get install -f
+
 # Borramos repos lamentablet y multitouch
 cd /home/$USER
 sudo rm -r lamentablet*
