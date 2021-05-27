@@ -1,9 +1,17 @@
-!#/bin/bash
+#!/bin/bash
 
-#repo=BlueDragonX
-#repo=kurt-vd
-repo=aleixq
+# Variables del repositorio a descargar
+	#repo=BlueDragonX
+	#repo=kurt-vd
+	repo=israelins85
+	#repo=aleixq
 
+# Branch a cambiar del repo. Default is main. Repo=israelins85 branch=dev. Repo=aleixq branch=absolute
+	#branch=main
+	branch=dev
+	#branch=absolute
+
+	
 sudo rm /usr/share/X11/xorg.conf.d/5-multitouch.conf
 sudo apt-get install libtool -y
 sudo apt-get install xinput -y
@@ -18,8 +26,8 @@ sudo ln -s /usr/bin/libtool /usr/share/aclocal/LIBTOOL
 cd ..
 git clone https://github.com/$repo/xf86-input-mtrack
 cd xf86*
-#solo si necesita cambiar a la branch absolute de aleixq
-	git checkout absolute
+#solo si necesita cambiar la branch
+	git checkout $branch
 autoreconf -i
 automake
 ./configure
