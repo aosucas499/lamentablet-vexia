@@ -27,5 +27,5 @@ make
 sudo make install
 sudo cp /usr/local/lib/xorg/modules/input/* /usr/lib/xorg/modules/input
 cd ..
-sudo cp /4-mtrack.conf /usr/share/X11/xorg.conf.d/
+sudo cp 4-mtrack.conf /usr/share/X11/xorg.conf.d/
 cd ~
