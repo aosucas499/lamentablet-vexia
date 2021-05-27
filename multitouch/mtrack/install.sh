@@ -20,7 +20,7 @@ git clone https://github.com/$repo/xf86-input-mtrack
 cd xf86*
 #solo si necesita cambiar a la branch absolute de aleixq
 	git checkout absolute
-autoreconf 
+autoreconf -i
 automake
 ./configure
 make
