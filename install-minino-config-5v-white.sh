@@ -89,6 +89,9 @@ sudo update-grub2
 #sudo sed -i '$ i\rm /dev/video0' /etc/rc.local
 #sudo sed -i '$ i\ln -s /dev/video0 /dev/video1' /etc/rc.local
 
+# Añadimos el teclado español en cada inicio.
+sudo sed -i '$ i\setxkbmap es' /etc/rc.local
+sudo sed -i '$a setxkbmap es' /etc/bash.bashrc
 
 #Drivers táctil guadalinex
 #
