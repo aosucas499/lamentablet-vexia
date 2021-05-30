@@ -781,6 +781,7 @@ descartado=$(getOpcionesDescartadas $opciones[@] $opc)
 
 # Procesamos las opciones elegidas por el usuario
 # ---
+#
 
 sudo apt update
 
