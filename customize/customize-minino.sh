@@ -12,9 +12,8 @@
 
 readonly DEBUG='n'
 
-# NOTA cambiar de aosucas499/minino-TDE a jasvazquez/minino-TDE para poder hacer
-# pruebas sin que el cambio de "release" afecte a los usuarios que ya tenga
-# autoupdate en Minino
+# NOTA cambiamos el repo de minino-tde a lamentablet-vexia, por si actualizaciones
+# del futuro rompen algo en las tablets.
 
 REPO_GITHUB=aosucas499/lamentablet-vexia
 
