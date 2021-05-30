@@ -314,7 +314,7 @@ EOF
 
 # Borramos la carpeta del proyecto
 #
-	sudo rm -r /home/$USER/minino-tde
+	sudo rm -r /home/$USER/lamentablet-vexia
 
 # Reiniciamos el sistema
 # 
