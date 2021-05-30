@@ -34,7 +34,7 @@ hasSudoRights(){
 # previa/etiqueta del proyecto o no hará update-minino nada al comprobar que está actualizado
 #
 	sudo cp ./customize/customize-minino.sh /usr/bin/customize-minino
-	git checkout tags/1.3.2
+	git checkout tags/1.0.0
 	sudo cp update-minino.sh /usr/bin/update-minino
 	
 # Procedemos a actualizar el sistema
@@ -311,6 +311,20 @@ EOF
 		
 		sudo cp /tmp/desktop-items-1.conf /etc/skel/.config/pcmanfm/LXDE
 		mv /tmp/desktop-items-1.conf /home/$USER/.config/pcmanfm/LXDE/desktop-items-0.conf
+		
+# Añadimos el teclado español en cada inicio.
+sudo sed -i '$ i\setxkbmap es' /etc/rc.local
+sudo sed -i '$a setxkbmap es' /etc/bash.bashrc
+
+# Cambiamos drivers táctil multitouch en favor de mtrack modificado para touchscreen
+cd /home/$USER/lamentablet-vexia/multitouch/mtrack
+chmod +x install.sh
+./install.sh
+
+#añadimos aplicación control brillo
+cd /home/$USER/lamentablet-vexia
+sudo dpkg -i guadalinex/cga-brillo/*
+sudo apt-get install -f
 
 # Borramos la carpeta del proyecto
 #
