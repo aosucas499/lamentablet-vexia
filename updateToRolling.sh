@@ -28,7 +28,7 @@ hasSudoRights(){
 # Entramos al proyecto
 #
 	#git clone https://github.com/aosucas499/minino-tde
-	cd /home/$USER/minino-tde
+	cd /home/$USER/lamentablet-vexia
 
 # Copiamos customize-minino de la última release y cambiamos a una versión 
 # previa/etiqueta del proyecto o no hará update-minino nada al comprobar que está actualizado
