@@ -139,6 +139,11 @@ sudo rm /usr/lib/xorg/modules/input/multitouch_drv.so
 #Borramos configuración tarjeta gráfica de intel que introdujo el paquete multitouch de guadalinex
 sudo rm /usr/share/X11/xorg.conf.d/5-intel_drv.conf
 
+# Cambiamos drivers táctil multitouch en favor de mtrack modificado para touchscreen
+cd /home/$USER/lamentablet-vexia/multitouch/mtrack
+chmod +x install.sh
+./install.sh
+
 #añadimos aplicación control brillo
 cd /home/$USER/lamentablet-vexia
 sudo dpkg -i guadalinex/cga-brillo/*
