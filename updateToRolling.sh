@@ -324,7 +324,7 @@ chmod +x install.sh
 #añadimos aplicación control brillo
 cd /home/$USER/lamentablet-vexia
 sudo dpkg -i guadalinex/cga-brillo/*
-sudo apt-get install -f
+sudo apt-get install -f -y
 
 # Borramos la carpeta del proyecto
 #
