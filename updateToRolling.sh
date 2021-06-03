@@ -311,7 +311,8 @@ y=92
 
 [trash:///]
 x=15
-y=2
+#y=2
+y=565
 EOF
 		
 		sudo cp /tmp/desktop-items-1.conf /etc/skel/.config/pcmanfm/LXDE
