@@ -314,7 +314,11 @@ EOF
 		
 # Añadimos el teclado español en cada inicio.
 sudo sed -i '$ i\setxkbmap es' /etc/rc.local
-sudo sed -i '$a setxkbmap es' /etc/bash.bashrc
+sudo sed -i '$a setxkbmap es' /etc/bash.bashrcel 
+
+# Ampliamos el tamaño de letra de la barra principal de las ventanas
+# para que sea más grande y mejorar el uso con el táctil
+sed -i '55 s/<size>10/<size>16/g' /home/usuario/.config/openbox/lxde-rc.xml
 
 # Cambiamos drivers táctil multitouch en favor de mtrack modificado para touchscreen
 cd /home/$USER/lamentablet-vexia/multitouch/mtrack
