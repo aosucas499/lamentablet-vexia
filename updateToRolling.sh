@@ -82,7 +82,7 @@ Global {
   background=0
   backgroundfile=/usr/share/lxpanel/images/background.png
   #iconsize=24
-  iconsize=180
+  iconsize=35
 }
 Plugin {
   type=menu
