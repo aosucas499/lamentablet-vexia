@@ -282,28 +282,28 @@ x=12
 y=368
 
 [tuxpaint.desktop]
-x=429
-y=579
+x=436
+y=627
 
 [tuxmath.desktop]
-x=533
-y=574
+x=538
+y=627
 
 [gcompris.desktop]
-x=641
-y=577
+x=636
+y=627
 
 [childsplay.desktop]
-x=323
-y=579
+x=754
+y=627
 
 [libreoffice-impress.desktop]
 x=483
 y=96
 
 [libreoffice-writer.desktop]
-x=371
-y=92
+x=585
+y=96
 
 [Documentos]
 x=20
