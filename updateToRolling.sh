@@ -53,17 +53,21 @@ hasSudoRights(){
 
 	# Creamos el fichero de la barra de tareas como la versión rolling y lo copiamos
 	# como predeterminado del sistema.
+	# También movemos la barra inferior a la parte superior del escritorio ya que el táctil pierde
+	# click en la parte inferior. También aumentamos el tamaño de esta.
 		cat << EOF >> /tmp/bottom
 # lxpanel <profile> config file. Manually editing is not recommended.
 # Use preference dialog in lxpanel to adjust config when you can.
 
 Global {
-  edge=bottom
+  edge=top
+  #edge=bottom
   allign=left
   margin=0
   widthtype=percent
   width=100
-  height=26
+  #height=26
+  height=40
   transparent=1
   tintcolor=#a4a4a4
   alpha=178
@@ -77,7 +81,8 @@ Global {
   usefontsize=0
   background=0
   backgroundfile=/usr/share/lxpanel/images/background.png
-  iconsize=24
+  #iconsize=24
+  iconsize=180
 }
 Plugin {
   type=menu
