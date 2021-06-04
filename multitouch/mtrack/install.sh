@@ -2,9 +2,10 @@
 
 # Variables del repositorio a descargar
 	#repo=BlueDragonX
-	repo=kurt-vd
+	#repo=kurt-vd
 	#repo=israelins85
 	#repo=aleixq
+	repo=aosucas499
 
 # Branch a cambiar del repo. Default is main. Repo=israelins85 branch=dev. Repo=aleixq branch=absolute
 	branch=main
