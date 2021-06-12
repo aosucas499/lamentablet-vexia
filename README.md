@@ -9,6 +9,16 @@
 
 El sistema instalado es [MININO #TDE](https://github.com/aosucas499/minino-TDE), que trae el cliente de la aplicación HGR, antiguamente llamada Sigala. De esta manera puede usarse en las tablet/ultraportátiles por los alumnos/as y en el sistema del profesor/a, instalar el servidor con este [docker/aplicación](https://github.com/aosucas499/hgr-dre)
 
+# Mejoras última versión
+ 
+ + Táctil funcional en tablet de cargador negro 9v.
+
+ + Control de brillo en la barra de tareas.
+ 
+ +  Sistema ***"actuactualizable"*** en cada inicio
+
+ +  Aplicación ***"actuactualizable"*** para añadir mejoras "customize-minino" (acceso ssh, navegación privada,autologin, control presencia, HGR Sigala...)
+
 
 # lamentablet-vexia cargador 9v
 
