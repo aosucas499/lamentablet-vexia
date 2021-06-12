@@ -7,8 +7,6 @@
 
 [Instrucciones de instalación](https://github.com/aosucas499/lamentablet-vexia/wiki/0.-Instrucciones-de-instalaci%C3%B3n-MININO-%23TDE-en-tablets-VEXIA)
 
-[WIKI: ](https://github.com/aosucas499/lamentablet-vexia/wiki)explica el proceso de desarrollo. No es necesario para instalar el sistema en las tablets, solo para desarrollo o investigación.
-
 El sistema instalado es [MININO #TDE](https://github.com/aosucas499/minino-TDE), que trae el cliente de la aplicación HGR, antiguamente llamada Sigala. De esta manera puede usarse en las tablet/ultraportátiles por los alumnos/as y en el sistema del profesor/a, instalar el servidor con este [docker/aplicación](https://github.com/aosucas499/hgr-dre)
 
 
@@ -99,6 +97,6 @@ Al arrancar en modo uefi,hay que usar el archivo BOOTx64.efi, colocados en una c
 Los drivers son casi imposibles de compilar o encontrar hoy día, tras muchas pruebas para encontrar los drivers del wifi, sonido o táctil se opta por usar el kernel actual de DEBIAN que al menos nos permite navegar usando el WIFI, se supone que instala el sonido y tenemos información de la batería. El sistema trae varios kernels (indicados arriba) para posible mejora e investigación, incluido el usado en guadalinex, pero con el problema de la firma que no carga los controladores.
 
 
-
+[WIKI: ](https://github.com/aosucas499/lamentablet-vexia/wiki)explica el proceso de desarrollo. No es necesario para instalar el sistema en las tablets, solo para desarrollo o investigación.
   
   
