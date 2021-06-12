@@ -19,6 +19,8 @@ El sistema instalado es [MININO #TDE](https://github.com/aosucas499/minino-TDE),
 
  +  Aplicación ***"actuactualizable"*** para añadir mejoras "customize-minino" (acceso ssh, navegación privada,autologin, control presencia, HGR Sigala...)
 
+### FAQs 
+[Enlace](https://github.com/aosucas499/lamentablet-vexia/wiki/FAQ's) (Actualizar desde una versión anterior sin instalar nueva ISO, recuperar panel inferior y control de presencia de Séneca )
 
 # lamentablet-vexia cargador 9v
 
