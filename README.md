@@ -45,8 +45,7 @@ Al arrancar en modo uefi,hay que usar el archivo "bootia32.efi" en las tablet de
 
 Los drivers son casi imposibles de compilar o encontrar hoy día, tras muchas pruebas para encontrar los drivers del wifi, sonido o táctil se opta por usar el kernel que se compiló en su día con las tablets vexia con el sistema Guadalinex Edu. En las tablet de cargador negro de 9v se usó el kernel 3.4.43.
 
-El driver táctil no es un driver del kernel, es un driver del XORG gráfico, viene configurado en el kernel pero necesita un paquete que incluye la configuración y el driver en sí, alojado en los repositorios de guadalinex EDU. Si instalas el paquete tal cual, el sistema no arranca, pues ese driver fue compilado para un XORG anterior. Es imposible volver a un XORG anterior en minino, por lo tanto se ha optado por compilar el driver MULTITOUCH para el XORG de minino (también se puede instalar con un apt-get install xserver-xorg-video-multitouch). El único problema es que esta acción hace que el táctil funcione parecido a un touchpad, no aparece el cursor donde pulsas en la pantalla taćtil, tienes que arrastrarlo por la pantalla. El doble click se genera pulsando tres clicks, y el doble click sirve para arrastrar objetos. Tiene más "gestos", algunos de los descubiertos por ahora, arrastrar con dos dedos hacia abajo para navegar por documentos y la web
-
+El driver táctil no es un driver del kernel, es un driver del XORG gráfico, viene configurado en el kernel pero necesita un paquete que incluye la configuración y el driver en sí, alojado en los repositorios de guadalinex EDU. Si instalas el paquete tal cual, el sistema no arranca, pues ese driver fue compilado para un XORG anterior. Es imposible volver a un XORG anterior en minino, por lo tanto se ha optado por compilar el driver MTRACK para el XORG de minino. 
 
  
 # lamentablet-vexia cargador 5v
@@ -105,6 +104,7 @@ La tablet Vexia, de cargador blanco de 5V, utilizada en los colegios de Andaluc�
 Al arrancar en modo uefi,hay que usar el archivo BOOTx64.efi, colocados en una carpeta llamada EFI, y dentro de esta otra llamada BOOT. Al tener arranque con 64bits permite arrancar cualquier sistema de hoy día con soporte UEFI a diferencia del modelo de cargador negro de 9v.
 
 Los drivers son casi imposibles de compilar o encontrar hoy día, tras muchas pruebas para encontrar los drivers del wifi, sonido o táctil se opta por usar el kernel actual de DEBIAN que al menos nos permite navegar usando el WIFI, se supone que instala el sonido y tenemos información de la batería. El sistema trae varios kernels (indicados arriba) para posible mejora e investigación, incluido el usado en guadalinex, pero con el problema de la firma que no carga los controladores.
+
 
 
 [WIKI: ](https://github.com/aosucas499/lamentablet-vexia/wiki)explica el proceso de desarrollo. No es necesario para instalar el sistema en las tablets, solo para desarrollo o investigación.
