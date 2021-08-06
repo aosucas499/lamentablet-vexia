@@ -13,6 +13,18 @@ Tras iniciar con el kernel instalado, el sonido funcionará y el micro, pero par
 
 "kernel-testing-5v/sound-rt5640/asound.state" en "/var/lib/alsa" y reiniciamos.
 
+* Por ahora no funciona, sin saber si es que ese driver no es exactamente el apropiado.
+
+### Táctil 
+
+Usando un sistema con kernel moderno que incluya el driver edt-ft5x06, cuya ruta al compilar kernel con "make menuconfig", es: Device Drivers / Input Drivers / Touchscreen / EDT Focaltech Ft5x06
+
+Introduciendo el siguiente comando, con un kernel con el driver compilado, hacemos que el táctil funcione, aunque no va bien.
+
+sudo modprobe edt-ft5x06
+
+echo 'edt-ft5x06 0x38' | sudo tee /sys/bus/i2c/devices/i2c-3/new_device
+
 ## Cámaras web
 
 Cuando compilamos el kernel con make menuconfig, los drivers supuestamente están en la ruta Device Drivers / Media
