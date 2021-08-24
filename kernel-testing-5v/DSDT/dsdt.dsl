@@ -3,7 +3,7 @@
  * AML Disassembler version 20140926-32 [Oct  1 2014]
  * Copyright (c) 2000 - 2014 Intel Corporation
  * 
- * Disassembly of dsdt.dat, Tue Aug 24 18:18:55 2021
+ * Disassembly of dsdt.dat, Sat Jul 31 01:02:32 2021
  *
  * Original Table Header:
  *     Signature        "DSDT"
@@ -9861,8 +9861,8 @@ DefinitionBlock ("dsdt.aml", "DSDT", 2, "ALASKA", "A M I", 0x00000004)
             Device (TCS0)
             {
                 Name (_ADR, Zero)  // _ADR: Address
-                Name (_HID, "GODX0911")  // _HID: Hardware ID
-                Name (_CID, "PNP0C50" /* HID Protocol Device (I2C bus) */)  // _CID: Compatible ID
+                Name (_HID, "GDIX1001")  // _HID: Hardware ID
+                Name (_CID, "GDIX1001" /* HID Protocol Device (I2C bus) */)  // _CID: Compatible ID
                 Name (_S0W, Zero)  // _S0W: S0 Device Wake State
                 Name (_DEP, Package (0x02)  // _DEP: Dependencies
                 {
@@ -11125,8 +11125,8 @@ DefinitionBlock ("dsdt.aml", "DSDT", 2, "ALASKA", "A M I", 0x00000004)
             Device (TCS0)
             {
                 Name (_ADR, Zero)  // _ADR: Address
-                Name (_HID, "GODX0911")  // _HID: Hardware ID
-                Name (_CID, "PNP0C50" /* HID Protocol Device (I2C bus) */)  // _CID: Compatible ID
+                Name (_HID, "GDIX1001")  // _HID: Hardware ID
+                Name (_CID, "GDIX1001" /* HID Protocol Device (I2C bus) */)  // _CID: Compatible ID
                 Name (_S0W, Zero)  // _S0W: S0 Device Wake State
                 Name (_DEP, Package (0x02)  // _DEP: Dependencies
                 {
