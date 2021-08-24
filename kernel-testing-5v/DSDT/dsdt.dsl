@@ -16,7 +16,7 @@
  *     Compiler ID      "AMI "
  *     Compiler Version 0x0100000D (16777229)
  */
-DefinitionBlock ("dsdt.aml", "DSDT", 2, "ALASKA", "A M I", 0x00000003)
+DefinitionBlock ("dsdt.aml", "DSDT", 2, "ALASKA", "A M I", 0x00000004)
 {
     /*
      * iASL Warning: There were 2 external control methods found during
