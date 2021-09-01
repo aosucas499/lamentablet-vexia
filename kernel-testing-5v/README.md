@@ -11,7 +11,13 @@ La ruta es: /carpeta kernel descargado/sound/soc/intel/boards
 
 Tras iniciar con el kernel instalado, el sonido funcionará y el micro, pero para que funcionen los auriculares, tenemos que copiar el archivos de este repo:
 
-"kernel-testing-5v/sound-rt5640/asound.state" en "/var/lib/alsa" y reiniciamos.
+"kernel-testing-5v/sound-rt5640/asound.state" en "/var/lib/alsa"
+
+borrar esta carpeta de una configuración de alsa anterior: 
+
+```sudo rm -r /usr/share/alsa/ucm/bytcr-rt5640```
+
+y reiniciamos.
 
 * Por ahora no funciona, sin saber si es que ese driver no es exactamente el apropiado.
 
