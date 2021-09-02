@@ -54,9 +54,25 @@ El driver táctil no es un driver del kernel, es un driver del XORG gráfico, vi
 
 ![5v](https://github.com/aosucas499/lamentablet-vexia/raw/main/guadalinex/vexia-5v.png)
 
-## Estado actual: usable con carencias
+## Estado actual: usable 
 
-### Kernel 5.10, el más usable por ahora (repositorios debian buster)
+### Kernel 5.10.13 - aosucas499. Kernel compilado y modificado. El más usable.
+
+WIFI: OK
+
+Audio: OK
+
+Indicador Batería: OK
+ 
+Táctil: NO
+ 
+Cámara WEB: NO
+ 
+Botones volumen: NO
+ 
+Micrófono: OK
+
+### Kernel 5.10 (repositorios debian buster)
 WIFI: OK
 
 Audio: NO (instalado driver y configuraciones, pero no se escucha sonido)
@@ -100,13 +116,6 @@ Cámara WEB: NO
 Botones volumen: NO
  
 Micrófono: NO
-
-La tablet Vexia, de cargador blanco de 5V, utilizada en los colegios de Andalucía solo permite arrancar en modo UEFI, nada de modo Legacy. La BIOS es UEFI 64 bits. 
-
-Al arrancar en modo uefi,hay que usar el archivo BOOTx64.efi, colocados en una carpeta llamada EFI, y dentro de esta otra llamada BOOT. Al tener arranque con 64bits permite arrancar cualquier sistema de hoy día con soporte UEFI a diferencia del modelo de cargador negro de 9v.
-
-Los drivers son casi imposibles de compilar o encontrar hoy día, tras muchas pruebas para encontrar los drivers del wifi, sonido o táctil se opta por usar el kernel actual de DEBIAN que al menos nos permite navegar usando el WIFI, se supone que instala el sonido y tenemos información de la batería. El sistema trae varios kernels (indicados arriba) para posible mejora e investigación, incluido el usado en guadalinex, pero con el problema de la firma que no carga los controladores.
-
 
 
 [WIKI: ](https://github.com/aosucas499/lamentablet-vexia/wiki)explica el proceso de desarrollo. No es necesario para instalar el sistema en las tablets, solo para desarrollo o investigación.
