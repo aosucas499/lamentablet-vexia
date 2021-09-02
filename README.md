@@ -3,21 +3,23 @@
 ## Enlace de la última imagen: [http://bit.ly/2OhHfLz](http://bit.ly/2OhHfLz)
 (enlace permanente aunque se actualice la ISO)
 
-***Fecha subida: 12 junio 2021***
+***Fecha subida: 2 septiembre 2021***
 
 [Instrucciones de instalación](https://github.com/aosucas499/lamentablet-vexia/wiki/0.-Instrucciones-de-instalaci%C3%B3n-MININO-%23TDE-en-tablets-VEXIA)
 
 El sistema instalado es [MININO #TDE](https://github.com/aosucas499/minino-TDE), con el añadido del control de brillo y el cliente de la aplicación HGR, antiguamente llamada Sigala. De esta manera puede usarse en las tablet/ultraportátiles por los alumnos/as y en el sistema del profesor/a, instalar el servidor con este [docker/aplicación](https://github.com/aosucas499/hgr-dre)
 
 # Mejoras última versión
+
+ + Sonido funcional y micrófono en tablet cargador blanco 5v.
  
  + Táctil funcional en tablet de cargador negro 9v.
 
  + Control de brillo en la barra de tareas.
  
- +  Sistema ***"actuactualizable"*** en cada inicio
+ + Sistema ***"actuactualizable"*** en cada inicio
 
- +  Aplicación ***"actuactualizable"*** para añadir mejoras "customize-minino" (acceso ssh, navegación privada,autologin, control presencia, HGR Sigala...)
+ + Aplicación ***"actuactualizable"*** para añadir mejoras "customize-minino" (acceso ssh, navegación privada,autologin, control presencia, HGR Sigala...)
 
 ### FAQs 
 [Enlace](https://github.com/aosucas499/lamentablet-vexia/wiki/FAQ's) (Actualizar desde una versión anterior sin instalar nueva ISO, recuperar panel inferior y control de presencia de Séneca )
