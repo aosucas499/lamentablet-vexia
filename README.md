@@ -41,14 +41,6 @@ Botones volumen: NO
  
 Micrófono: NO
 
-La tablet Vexia, de cargador negro de 9V, utilizada en los colegios de Andalucía, solo permite arrancar en modo UEFI, nada de modo Legacy. Para rizar más el rizo, la BIOS es UEFI 32 bits. Necesita archivos especiales para arranque.
-
-Al arrancar en modo uefi,hay que usar el archivo "bootia32.efi" en las tablet de 9v, colocados en una carpeta llamada EFI, y dentro de esta otra llamada BOOT.
-
-Los drivers son casi imposibles de compilar o encontrar hoy día, tras muchas pruebas para encontrar los drivers del wifi, sonido o táctil se opta por usar el kernel que se compiló en su día con las tablets vexia con el sistema Guadalinex Edu. En las tablet de cargador negro de 9v se usó el kernel 3.4.43.
-
-El driver táctil no es un driver del kernel, es un driver del XORG gráfico, viene configurado en el kernel pero necesita un paquete que incluye la configuración y el driver en sí, alojado en los repositorios de guadalinex EDU. Si instalas el paquete tal cual, el sistema no arranca, pues ese driver fue compilado para un XORG anterior. Es imposible volver a un XORG anterior en minino, por lo tanto se ha optado por compilar el driver MTRACK para el XORG de minino. 
-
  
 # lamentablet-vexia cargador 5v
 
@@ -80,36 +72,6 @@ Audio: NO (instalado driver y configuraciones, pero no se escucha sonido)
 Indicador Batería: OK
  
 Táctil: NO
- 
-Cámara WEB: NO
- 
-Botones volumen: NO
- 
-Micrófono: NO
-
-### Kernel 4.12 (repositorios debian jessie)
-WIFI: OK (hay que construirlo)
-
-Indicador Batería: NO
-
-Audio: NO
- 
-Táctil: NO
- 
-Cámara WEB: NO
- 
-Botones volumen: NO
- 
-Micrófono: NO
-
-### Kernel 3.10.20, (Guadalinex): en este kernel debería de funcionar todo, pero al ejecutarse muestra un fallo de firma y los controladores no se cargan. 
-WIFI: NO
-
-Indicador Batería: OK
-
-Audio: NO
- 
-Táctil: OK
  
 Cámara WEB: NO
  
