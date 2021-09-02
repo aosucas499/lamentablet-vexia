@@ -48,8 +48,6 @@ Micrófono: NO
 
 ## Estado actual: usable 
 
-### Kernel 5.10.13 - aosucas499. Kernel compilado y modificado. El más usable.
-
 WIFI: OK
 
 Audio: OK
@@ -63,21 +61,6 @@ Cámara WEB: NO
 Botones volumen: NO
  
 Micrófono: OK
-
-### Kernel 5.10 (repositorios debian buster)
-WIFI: OK
-
-Audio: NO (instalado driver y configuraciones, pero no se escucha sonido)
-
-Indicador Batería: OK
- 
-Táctil: NO
- 
-Cámara WEB: NO
- 
-Botones volumen: NO
- 
-Micrófono: NO
 
 
 [WIKI: ](https://github.com/aosucas499/lamentablet-vexia/wiki)explica el proceso de desarrollo. No es necesario para instalar el sistema en las tablets, solo para desarrollo o investigación.
