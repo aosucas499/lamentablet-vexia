@@ -9,6 +9,19 @@
 
 El sistema instalado es [MININO #TDE](https://github.com/aosucas499/minino-TDE), con el añadido del control de brillo y el cliente de la aplicación HGR, antiguamente llamada Sigala. De esta manera puede usarse en las tablet/ultraportátiles por los alumnos/as y en el sistema del profesor/a, instalar el servidor con este [docker/aplicación](https://github.com/aosucas499/hgr-dre)
 
+
+Si este proyecto te ayuda, puedes invitarme a un café.
+
+
+If this project helps you,  you can give me a cup of coffee .
+
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?business=FUMT27MVTRTHJ&no_recurring=0&item_name=Proyectos+TIC+Andaluc%C3%ADa&currency_code=EUR)
+
+
+
+
+
 # Mejoras última versión
 
  + Sonido funcional y micrófono en tablet cargador blanco 5v.
