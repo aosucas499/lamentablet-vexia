@@ -1,4 +1,4 @@
-## Instruccione para usar el DSDT de la tablet vexia.
+## Instrucciones para usar el DSDT de la tablet vexia.
 
 https://wiki.archlinux.org/title/DSDT
 
