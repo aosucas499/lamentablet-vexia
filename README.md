@@ -13,7 +13,7 @@ El sistema instalado es [MININO #TDE](https://github.com/aosucas499/minino-TDE),
 Si este proyecto te ayuda, puedes invitarme a un café.
 
 
-If this project helps you,  you can give me a cup of coffee .
+If this project helps you, you can give me a cup of coffee.
 
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?business=FUMT27MVTRTHJ&no_recurring=0&item_name=Proyectos+TIC+Andaluc%C3%ADa&currency_code=EUR)
@@ -24,20 +24,20 @@ If this project helps you,  you can give me a cup of coffee .
 
 # Mejoras última versión
 
- + Sonido funcional y micrófono en tablet cargador blanco 5v.
+ + Sonido funcional y micrófono en tablet cargador blanco 5 V.
  
- + Táctil funcional en tablet de cargador negro 9v.
+ + Táctil funcional en tablet de cargador negro 9 V.
 
  + Control de brillo en la barra de tareas.
  
- + Sistema ***"actuactualizable"*** en cada inicio
+ + Sistema ***"actualizable"*** en cada inicio
 
- + Aplicación ***"actuactualizable"*** para añadir mejoras "customize-minino" (acceso ssh, navegación privada,autologin, control presencia, HGR Sigala...)
+ + Aplicación ***"actualizable"*** para añadir mejoras "customize-minino" (acceso ssh, navegación privada,autologin, control presencia, HGR Sigala...)
 
 ### FAQs 
 [Enlace](https://github.com/aosucas499/lamentablet-vexia/wiki/FAQ's) (Actualizar desde una versión anterior sin instalar nueva ISO, recuperar panel inferior y control de presencia de Séneca )
 
-# lamentablet-vexia cargador 9v
+# lamentablet-vexia cargador 9 V
 
 ![9v](https://github.com/aosucas499/lamentablet-vexia/raw/main/guadalinex/vexia-9v.png)
 
@@ -57,7 +57,7 @@ Botones volumen: NO
 Micrófono: NO
 
  
-# lamentablet-vexia cargador 5v
+# lamentablet-vexia cargador 5 V
 
 ![5v](https://github.com/aosucas499/lamentablet-vexia/raw/main/guadalinex/vexia-5v.png)
 
@@ -78,13 +78,13 @@ Botones volumen: NO
 Micrófono: OK
 
 
-[WIKI: ](https://github.com/aosucas499/lamentablet-vexia/wiki)explica el proceso de desarrollo. No es necesario para instalar el sistema en las tablets, solo para desarrollo o investigación.
+[WIKI: ](https://github.com/aosucas499/lamentablet-vexia/wiki) explica el proceso de desarrollo. No es necesario para instalar el sistema en las tablets, solo para desarrollo o investigación.
   
   
 Si este proyecto te ayuda, puedes invitarme a un café.
 
 
-If this project helps you,  you can give me a cup of coffee .
+If this project helps you, you can give me a cup of coffee.
 
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?business=FUMT27MVTRTHJ&no_recurring=0&item_name=Proyectos+TIC+Andaluc%C3%ADa&currency_code=EUR)
