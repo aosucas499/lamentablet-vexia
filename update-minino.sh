@@ -17,11 +17,6 @@ FIREFOX=https://download-installer.cdn.mozilla.net/pub/firefox/releases/83.0/lin
 LANZADOR=https://raw.githubusercontent.com/aosucas499/actualiza-firefox/master/firefox-latest.desktop
 NEWLANZADOR=firefox-latest.desktop
 
-source=/etc/apt/sources.list
-source2=/etc/apt/sources.list.d/multimedia2.list
-sourceSize=$(du -b $source|cut -f 1)
-source2Size=$(du -b $source2|cut -f 1)
-
 ROJO="\033[1;31m"
 NORMAL="\033[0m"
 AZUL="\033[1;34m"
@@ -370,42 +365,6 @@ function sudoersUpdate {
 	echo -e "${AZUL}update-minino añadido a sudoers${NORMAL}"
 }
 
-function fixmultimediaSource {
-	if [ -f "/etc/apt/sources.list.d/multimedia.list" ]; then 
-		echo -e "${AZUL}Corrigiendo multimedia sources${NORMAL}"
-        	sudo mv /etc/apt/sources.list.d/multimedia.list /etc/apt/sources.list.d/multimedia2.list
-        	sudo echo deb http://archive.deb-multimedia.org/ jessie non-free main > /etc/apt/sources.list.d/multimedia2.list
-        	sudo apt-get update
-	else
-	echo -e "${AZUL}Multimedia sources actualizado${NORMAL}"
-fi
-}
-
-function fixSource {
-	
-	if [[ $sourceSize = "748" ]]; then
-		
-		echo -e "${AZUL}Fichero sources.list apropiado${NORMAL}"
-	else
-		sudo wget https://raw.githubusercontent.com/aosucas499/sources/main/minino-tde-actual.list -O /tmp/sources.list
-		sudo cp /tmp/sources.list $source
-		sudo apt update -y
-		echo -e "${AZUL}Fichero sources.list corregido${NORMAL}"
-	fi
-}
-function fixSource2 {
-	
-	if [[ $source2Size = "60" ]]; then
-		
-		echo -e "${AZUL}Fichero sources2.list apropiado${NORMAL}"
-	else
-		sudo wget https://raw.githubusercontent.com/aosucas499/sources/main/minino-tde-multimedia-actual.list -O /tmp/multimedia2.list
-		sudo cp /tmp/multimedia2.list $source2
-		sudo apt update -y
-		echo -e "${AZUL}Fichero multimedia2.list corregido${NORMAL}"
-	fi
-}
-
 function prepareIso {
 	
 	echo -e "${AZUL}Preparando la ISO${NORMAL}"
@@ -674,9 +633,6 @@ showAsterisks
 customize-app
 firefox83-system
 sudoersUpdate
-fixmultimediaSource
-fixSource
-fixSource2
 
 autostartUpdateMinino
 
