@@ -13,13 +13,22 @@
 
 REPO_GITHUB=aosucas499/lamentablet-vexia
 
-FIREFOX=https://download-installer.cdn.mozilla.net/pub/firefox/releases/83.0/linux-i686/es-ES/firefox-83.0.tar.bz2
+FIREFOX=https://ftp.mozilla.org/pub/firefox/releases/144.0/linux-i686/es-ES/firefox-144.0.tar.xz
 LANZADOR=https://raw.githubusercontent.com/aosucas499/actualiza-firefox/master/firefox-latest.desktop
 NEWLANZADOR=firefox-latest.desktop
+
+source=/etc/apt/sources.list
+source2=/etc/apt/sources.list.d/multimedia2.list
+sourceSize=$(du -b $source|cut -f 1)
+source2Size=$(du -b $source2|cut -f 1)
 
 ROJO="\033[1;31m"
 NORMAL="\033[0m"
 AZUL="\033[1;34m"
+
+BIGTMP=/home/$SUDO_USER/.cache/minino-big
+mkdir -p /home/$SUDO_USER/.cache/minino-big
+mkdir -p /home/$USER/.cache/minino-big
 
 # Comprueba si está instalado en el sistema el paquete solicitado
 # ---
@@ -296,15 +305,21 @@ function customize-app {
 	echo -e "${AZUL}Aplicación customize-minino instalada como app del sistema${NORMAL}"
 }
 
-function firefox83-system {
+function firefox144-system {
 
 	# Comprobamos si el cambio ya ha sido aplicado previamente
-	# ---
-
-	if [[ -d /usr/lib/firefox-latest ]]; then
-		echo -e "${AZUL}Ya teníamos firefox83 en el sistema${NORMAL}"
-		return
-	fi
+    # ---
+    if [[ -d /usr/lib/firefox-latest ]]; then
+        INSTALLED_VER=$(/usr/lib/firefox-latest/firefox --version 2>/dev/null | awk '{print $3}')
+        if [[ "$INSTALLED_VER" == "144.0" ]]; then
+            echo -e "${AZUL}Ya está instalada la versión Firefox 144 (última versión para 32 bits).${NORMAL}"
+            return
+        else
+            echo -e "${AZUL}Actualizando Firefox ($INSTALLED_VER → 144.0)...${NORMAL}"
+        fi
+    else
+        echo -e "${AZUL}Instalando Firefox 144 por primera vez...${NORMAL}"
+    fi
 
 	# Eliminamos del sistema la version noroot para el usuario
 	
@@ -314,23 +329,34 @@ function firefox83-system {
 	sudo rm -rf /home/$USER/Descargas/actualiza-firefox-guadalinex-master
 	sudo rm -f 	/home/$USER/Descargas/actualiza-firefox-guadalinex-master.zip
 
-	echo -e "Borrado firefox83 de la carpeta usuario${NORMAL}"
+	sudo rm -rf /usr/lib/firefox-latest
+ 
+ echo -e "${AZUL}Borradas versiones anteriores de Firefox${NORMAL}"
 
-  	# Instala firefox 83 en el sistema
+  	# Instala firefox 144 en el sistema
 
-	echo -e "Descargando Firefox para arquitecturas de 32 bits${NORMAL}"
-	wget $FIREFOX -q --show-progress -O /tmp/firefox-latest.tar.bz2
-	echo -e "Firefox se está descomprimiendo en un directorio del sistema...${NORMAL}"
-	sudo tar -xjf /tmp/firefox-latest.tar.bz2 -C /usr/lib
-	sudo mv /usr/lib/firefox /usr/lib/firefox-latest
-	echo -e "Creando accesos directos...${NORMAL}"
-	wget $LANZADOR -q -O /tmp/$NEWLANZADOR
-	sudo cp /tmp/$NEWLANZADOR /usr/share/applications/
-	cp /tmp/$NEWLANZADOR /home/$USER/Escritorio
-	echo -e "BORRANDO archivos firefox residuales...${NORMAL}"
-	rm /tmp/$NEWLANZADOR
-	rm /tmp/firefox-latest.tar.bz2
-	
+	# Instala firefox 144 en el sistema
+echo -e "Descargando Firefox para arquitecturas de 32 bits${NORMAL}"
+mkdir -p /home/$SUDO_USER/.cache/minino-big
+mkdir -p /home/$USER/.cache/minino-big
+cd $BIGTMP
+sudo rm firefox*
+wget "$FIREFOX"
+echo -e "Firefox se está descomprimiendo en un directorio del sistema...${NORMAL}"
+sudo tar -xJf firefox*.xz -C /usr/lib
+sudo mv /usr/lib/firefox /usr/lib/firefox-latest
+cd $HOME
+
+echo -e "Creando accesos directos...${NORMAL}"
+wget "$LANZADOR" -q -O "/tmp/$NEWLANZADOR"
+sudo cp "/tmp/$NEWLANZADOR" /usr/share/applications/
+cp "/tmp/$NEWLANZADOR" "/home/$USER/Escritorio"
+
+echo -e "BORRANDO archivos firefox residuales...${NORMAL}"
+rm "/tmp/$NEWLANZADOR"
+sudo rm /home/$USER/.cache/minino-big/firefox*
+sudo rm /home/$SUDO_USER/.cache/minino-big/firefox*
+
 	#Borra el actualizador automático ya que puede que en un futuro las actualizaciones no sean compatibles con el sistema
 	
 	sudo rm -f /usr/lib/firefox-latest/updat* 
@@ -338,7 +364,7 @@ function firefox83-system {
 	#Librería necesaria para versiones nuevas de firefox, instalada previamente, pero por si las moscas	
 	
 	sudo apt-get install libatomic1 -y 
-	echo -e "${AZUL}Firefox 83 instalado correctamente en el sistema${NORMAL}"
+	echo -e "${AZUL}Firefox 144 instalado correctamente en el sistema${NORMAL}"
     
 }
 
@@ -363,6 +389,42 @@ function sudoersUpdate {
     sudo cp ./tools/zz-update-minino /etc/sudoers.d/ 
 
 	echo -e "${AZUL}update-minino añadido a sudoers${NORMAL}"
+}
+
+function fixmultimediaSource {
+	if [ -f "/etc/apt/sources.list.d/multimedia.list" ]; then 
+		echo -e "${AZUL}Corrigiendo multimedia sources${NORMAL}"
+        	sudo mv /etc/apt/sources.list.d/multimedia.list /etc/apt/sources.list.d/multimedia2.list
+        	sudo echo deb http://archive.deb-multimedia.org/ jessie non-free main > /etc/apt/sources.list.d/multimedia2.list
+        	sudo apt-get update
+	else
+	echo -e "${AZUL}Multimedia sources actualizado${NORMAL}"
+fi
+}
+
+function fixSource {
+	
+	if [[ $sourceSize = "748" ]]; then
+		
+		echo -e "${AZUL}Fichero sources.list apropiado${NORMAL}"
+	else
+		sudo wget https://raw.githubusercontent.com/aosucas499/sources/main/minino-tde-actual.list -O /tmp/sources.list
+		sudo cp /tmp/sources.list $source
+		sudo apt update -y
+		echo -e "${AZUL}Fichero sources.list corregido${NORMAL}"
+	fi
+}
+function fixSource2 {
+	
+	if [[ $source2Size = "60" ]]; then
+		
+		echo -e "${AZUL}Fichero sources2.list apropiado${NORMAL}"
+	else
+		sudo wget https://raw.githubusercontent.com/aosucas499/sources/main/minino-tde-multimedia-actual.list -O /tmp/multimedia2.list
+		sudo cp /tmp/multimedia2.list $source2
+		sudo apt update -y
+		echo -e "${AZUL}Fichero multimedia2.list corregido${NORMAL}"
+	fi
 }
 
 function prepareIso {
@@ -431,8 +493,10 @@ function prepareIso {
 
 function descargarMininoTDE(){
 
-git clone "https://github.com/$REPO_GITHUB.git" /tmp/minino
-cd /tmp/minino
+descargarMininoTDE() {
+    git clone "https://github.com/$REPO_GITHUB.git" "$BIGTMP/minino"
+    cd "$BIGTMP/minino"
+}
 
 echo -e "${AZUL}Actualización de Minino-TDE descargada correctamente${NORMAL}"
 }
@@ -610,6 +674,9 @@ fi
 
 rm -f /tmp/updateminino-*
 
+# Limpiar descargas grandes
+rm -rf "$BIGTMP"
+
 # Aseguramos tener el sistema actualizado
 # ---
 
@@ -631,8 +698,11 @@ corregirImageMagick
 corregirInstalacionDesatendida
 showAsterisks
 customize-app
-firefox83-system
+firefox144-system
 sudoersUpdate
+fixmultimediaSource
+fixSource
+fixSource2
 
 autostartUpdateMinino
 
