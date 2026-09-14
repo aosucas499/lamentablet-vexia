@@ -11,7 +11,7 @@
 # NOTA cambiamos el repo de minino-tde a lamentablet-vexia, por si actualizaciones
 # del futuro rompen algo en las tablets.
 
-REPO_GITHUB=aosucas499/lamentablet-testing
+REPO_GITHUB=aosucas499/lamentablet-vexia
 
 FIREFOX=https://ftp.mozilla.org/pub/firefox/releases/144.0/linux-i686/es-ES/firefox-144.0.tar.xz
 LANZADOR=https://raw.githubusercontent.com/aosucas499/actualiza-firefox/master/firefox-latest.desktop
