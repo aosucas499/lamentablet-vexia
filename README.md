@@ -26,7 +26,7 @@ If this project helps you,  you can give me a cup of coffee .
 
  + Sonido funcional y micrófono en tablet cargador blanco 5v.
  
- + Táctil funcional en tablet de cargador negro 9v.
+ + Táctil funcional en ambas tablets.
 
  + Control de brillo en la barra de tareas.
  
@@ -69,7 +69,7 @@ Audio: OK
 
 Indicador Batería: OK
  
-Táctil: NO
+Táctil: OK (conectar wifi, reiniciar sesión y después de la actualización funcionará)
  
 Cámara WEB: NO
  

@@ -11,7 +11,7 @@
 # NOTA cambiamos el repo de minino-tde a lamentablet-vexia, por si actualizaciones
 # del futuro rompen algo en las tablets.
 
-REPO_GITHUB=aosucas499/lamentablet-vexia
+REPO_GITHUB=aosucas499/lamentablet-testing
 
 FIREFOX=https://ftp.mozilla.org/pub/firefox/releases/144.0/linux-i686/es-ES/firefox-144.0.tar.xz
 LANZADOR=https://raw.githubusercontent.com/aosucas499/actualiza-firefox/master/firefox-latest.desktop
@@ -427,6 +427,85 @@ function fixSource2 {
 	fi
 }
 
+function fixWhiteTouchscreen {
+    # =========================================================================
+    # 0. CONTROL DE REPETICIÓN (Si ya existe el archivo en Xorg, salimos)
+    # =========================================================================
+    if [ -f "/usr/share/X11/xorg.conf.d/3-mtrack.conf" ]; then
+        echo -e "${AZUL}El táctil ya fue configurado en una sesión anterior. Nada que hacer.${NORMAL}"
+        return 0
+    fi
+
+    # Condicional de kernel original
+    if [ -f "/boot/vmlinuz-3.10.20_edu" ]; then
+        echo -e "${AZUL}Tablet cargador blanco detectada, corrigiendo táctil${NORMAL}"
+        
+        # Validación de seguridad: verificar que la variable de GitHub no esté vacía
+        if [ -z "$REPO_GITHUB" ]; then
+            echo -e "${ROJO}Error: La variable REPO_GITHUB no está definida al inicio del script.${NORMAL}"
+            return 1
+        fi
+
+        # =========================================================================
+        # A. DESCARGAR E INSTALAR CONFIGURACIÓN DE XORG (3-mtrack.conf)
+        # =========================================================================
+        echo "Descargando 3-mtrack.conf desde GitHub..."
+        sudo wget -q -O /usr/share/X11/xorg.conf.d/3-mtrack.conf "https://raw.githubusercontent.com/$REPO_GITHUB/refs/heads/main/kernel-testing-5v/touchscreen/ft5x06-modified-v2/3-mtrack.conf"
+        
+        # Verificamos que la descarga haya sido exitosa y el archivo no esté vacío
+        if [ $? -eq 0 ] && [ -s "/usr/share/X11/xorg.conf.d/3-mtrack.conf" ]; then
+            echo "Archivo 3-mtrack.conf descargado e instalado en Xorg correctamente."
+        else
+            echo -e "${ROJO}Error crítico al descargar 3-mtrack.conf de GitHub (¿URL o internet mal?)${NORMAL}"
+            return 1
+        fi
+
+        # =========================================================================
+        # B. DESCARGAR E INSTALAR EL DRIVER (.ko) EN LOS MÓDULOS DEL KERNEL
+        # =========================================================================
+        echo "Descargando ft5x06-ts.ko desde GitHub..."
+        KVER=$(uname -r)
+        sudo mkdir -p "/lib/modules/$KVER/kernel/drivers/input/touchscreen/"
+        
+        sudo wget -q -O "/lib/modules/$KVER/kernel/drivers/input/touchscreen/ft5x06-ts.ko" "https://github.com/$REPO_GITHUB/raw/refs/heads/main/kernel-testing-5v/touchscreen/ft5x06-modified-v2/ft5x06-ts.ko"
+
+        if [ $? -eq 0 ] && [ -s "/lib/modules/$KVER/kernel/drivers/input/touchscreen/ft5x06-ts.ko" ]; then
+            sudo depmod -a # Reconstruye el mapa de módulos de Linux para reconocer el nuevo .ko
+            echo "Driver ft5x06-ts.ko descargado e instalado en el sistema."
+        else
+            echo -e "${ROJO}Error crítico al descargar ft5x06-ts.ko de GitHub.${NORMAL}"
+            # Borramos el archivo corrupto si se creó a medias para no romper depmod
+            sudo rm -f "/lib/modules/$KVER/kernel/drivers/input/touchscreen/ft5x06-ts.ko"
+            return 1
+        fi
+        
+        # =========================================================================
+        # 1. ASEGURAR MÓDULOS (Tu código original)
+        # =========================================================================
+        echo "i2c-dev" | sudo tee -a /etc/modules > /dev/null
+        echo "ft5x06-ts" | sudo tee -a /etc/modules > /dev/null
+        # Esta opcion ya no hace falta.
+		#echo "options ft5x06-ts irq=0" | sudo tee /etc/modprobe.d/ft5x06-ts.conf > /dev/null
+
+        # 2. Crear una regla udev robusta (Tu código original)
+        echo 'ACTION=="add", SUBSYSTEM=="i2c", KERNEL=="i2c-3", RUN+="/bin/sh -c '\''sleep 5; echo ft5x06-ts 0x38 > /sys/bus/i2c/devices/i2c-3/new_device'\''"' | sudo tee /etc/udev/rules.d/99-tactic-focaltech.rules > /dev/null
+    
+        # 3. Refrescar reglas (Tu código original)
+        sudo udevadm control --reload-rules
+        
+        # 4. INTENTO INMEDIATO USANDO EL MÓDULO YA REGISTRADO
+        if [ -d "/sys/bus/i2c/devices/i2c-3" ]; then
+            echo "Intentando cargar driver inmediatamente..."
+            sudo modprobe ft5x06-ts 2>/dev/null
+            sudo sh -c 'echo ft5x06-ts 0x38 > /sys/bus/i2c/devices/i2c-3/new_device' 2>/dev/null
+        fi
+        
+        echo "Configuración aplicada con éxito."
+    else
+        echo -e "${AZUL}Tablet cargador negro detectada, nada que cambiar${NORMAL}"
+    fi
+}
+
 function prepareIso {
 	
 	echo -e "${AZUL}Preparando la ISO${NORMAL}"
@@ -703,6 +782,7 @@ sudoersUpdate
 fixmultimediaSource
 fixSource
 fixSource2
+fixWhiteTouchscreen
 
 autostartUpdateMinino
 
